@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <!-- 1. Encodage + compatibilité -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- 2. Responsive + accessibilité -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <meta name="theme-color" content="#ffffff">            barre de navigateur colorée sur mobile -->
+    <meta name="robots" content="index,follow">            <!-- pour moteurs de recherche -->
+
+    <!-- 3. SEO On-page -->
+    <title>Portfolio • Léa Buonomo • Développeuse web</title>
+    <meta name="description" content="Découvrez le portfolio de Léa Buonomo, développeuse web spécialisée en HTML/CSS avancé, JavaScript et accessibilité.">
+
+    <!-- 4. Canonical & Multilang -->
+    <link rel="canonical" href="https://ton-site.com/">
+    
+    <!-- <link rel="alternate" hreflang="en" href="https://ton-site.com/en/">   Pour la version en anglais -->
+
+    <!-- 5. Favicons & PWA -->
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <!-- 6. Preconnect & Preload (fonts, API) -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="font" href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" type="font/woff2" crossorigin>
+
+    <!-- 7. Open Graph / Social sharing -->
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="fr_FR">
+    <meta property="og:url" content="https://ton-site.com/">
+    <meta property="og:title" content="Portfolio • Léa Buonomo">
+    <meta property="og:description" content="Découvrez mes projets, compétences et mon parcours en développement web accessible.">
+    <meta property="og:image" content="https://ton-site.com/og-image.png">
+
+    <!-- 8. Twitter Card
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@tonCompte">
+    <meta name="twitter:title" content="Portfolio • Léa Buonomo">
+    <meta name="twitter:description" content="Mon portfolio de développeuse web, accessible et responsive.">
+    <meta name="twitter:image" content="https://ton-site.com/twitter-card.png"> -->
+
+    <link rel="stylesheet" href="style.css" />
+    <script src="index.js" defer></script>
+</head>
+<body>
+    <!-- SKIP TO CONTENT - WCAG -->
+    <a class="skip-link" href="#main">Aller au contenu principal</a>
+
+    <!-------- LIGHTBOX ------------>
+    <div id="lightbox-overlay" role="dialog" aria-modal="true" aria-labelledby="lightbox-title" aria-hidden="true" tabindex="-1">
+        <button type="button" id="lightbox-close" aria-label="Fermer la lightbox">×</button>
+        <h2 id="lightbox-title" class="visually-hidden">Prévisualisation</h2>
+        <img src="" alt="" role="presentation" />
+    </div>
+        <!-------- SIDEBAR ------------>
+        <header class="sidebar" role="banner">
+            <nav class="nav-top" aria-label="Navigation principale">
+                <ul>
+                    <li><a href="#hero">Accueil</a></li>
+                    <li><a href="#sommaire">Sommaire</a></li>
+                </ul>
+            </nav>
+            
+            <!-- Points de navigation centré dans la vertical -->
+            <nav class="nav-mid" aria-label="Navigation par sections">
+                <ul>
+                    <li><a href="#about" class="dot" aria-label="À propos de moi"></a></li>
+                    <!-- ======================================================================================= -->
+                    <li><a href="#skills" class="dot" aria-label="Compétences"></a></li>
+                    <li><a href="#project1" class="dot" aria-label="Projet n°1"></a></li>
+                    <li><a href="#project2" class="dot" aria-label="Projet n°2"></a></li>
+                    <li><a href="#project3" class="dot" aria-label="Projet n°3"></a></li>
+                    <li><a href="#project4" class="dot" aria-label="Projet n°4"></a></li>
+                    <li><a href="#project5" class="dot" aria-label="Projet n°5"></a></li>
+                    <li><a href="#formations" class="dot" aria-label="Formation & apprentissage"></a></li>
+                    <li><a href="#team" class="dot dot-end" aria-label="CV & lettre de motivation"></a></li>
+                </ul>
+            </nav>
+            
+            <nav class="nav-bottom" aria-label="Contact rapide">
+                <a href="#contact">Contact</a>
+            </nav>
+        </header>
+
+    <!-------- MAIN ------------>    
+    <main id="main">
+        <!--------- HERO SECTION ---------->
+        <section id="hero">
+            <div class="hero-content" role="region" aria-labelledby="hero-title">
+                <!-- Titre et Image positionné au centre de la view -->
+                <div class="hero-image" aria-hidden="true"></div>
+                <h1 id="hero-title" class="title">PORTFOLIO</h1>
+
+                <!-- Informations de gauche -->
+                <div class="hero-left">
+                    <!-- Réseaux sociaux -->
+                    <div class="social">
+                        <h2 class="name">Buonomo Léa</h2>
+                        <h3 class="social-title">Développeuse web</h3>
+                        <div class="social-icons">
+                            <a href="https://github.com/…" class="social-link" aria-label="GitHub de Buonomo Léa" target="_blank" rel="noopener">
+                                <svg aria-hidden="true" focusable="false" width="24" height="24" viewBox="0 0 24 24">
+                                    <path d="M12 0C5.37 … Z" fill="currentColor"/>
+                                </svg>
+                                <span class="visually-hidden">GitHub</span>
+                            </a>
+
+                            <a href="https://twitter.com" class="social-link" aria-label="Twitter de Buonomo Léa" target="_blank" rel="noopener">
+                                <svg aria-hidden="true" focusable="false" width="24" height="24" viewBox="0 0 24 24">
+                                    <path d="M23.9 4.6 … Z" fill="currentColor"/>
+                                </svg>
+                                <span class="visually-hidden">Twitter</span>
+                            </a>
+
+                            <a href="https://linkedin.com" class="social-link"aria-label="LinkedIn de Buonomo Léa" target="_blank" rel="noopener">
+                                <svg aria-hidden="true" focusable="false" width="24" height="24" viewBox="0 0 24 24">
+                                    <path d="M4.98 3.5 … Z" fill="currentColor"/>
+                                </svg>
+                                <span class="visually-hidden">LinkedIn</span>
+                            </a>
+
+                            <a href="https://instagram.com" class="social-link" aria-label="Instagram de Buonomo Léa" target="_blank" rel="noopener">
+                                <svg aria-hidden="true" focusable="false" width="24" height="24" viewBox="0 0 24 24">
+                                    <path d="M12 2.2 … Z" fill="currentColor"/>
+                                </svg>
+                                <span class="visually-hidden">Instagram</span>
+                            </a>
+                        </div>
+                    </div>        
+                </div>
+                <!-- Informations de droite -->
+                <div class="hero-right">
+                    <div class="social-right">
+                        <div class="hero-paragraphe">
+                            <p class="subtitle">Un jolie petit paragraphe ici,</p>
+                            <p class="subtitle">un jolie texte du style, venez</p>
+                            <p class="subtitle">découvrir mon univers et mes compétences.</p>
+                            <p class="subtitle paraph-space">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                            <p class="subtitle">Amet odio iure pariatur laborum velit quisquam ullam quis.</p>                         
+                        </div>
+                        <a href="#project1" class="hero-button" role="button">Mes projets <span class="arrow">&rarr;</span></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!----------- SOMMAIRE ------------>
+        <section id="sommaire" class="sommaire" aria-labelledby="sommaire-title">
+            <div class="side"></div>
+            <nav class="table-of-contents" aria-label="Sommaire">
+                <h2 id="sommaire-title" class="toc-title">
+                    <span class="toc-upper">TABLE DES</span><br>
+                    <span class="toc-bold">MATIÈRES</span>
+                </h2>
+
+                <div class="toc-grid">
+                    <ul class="toc-list">
+                        <li><span>1.</span> <a href="#about">À propos de moi</a></li>
+                        <li><span>2.</span> <a href="#skills">Compétences</a></li>
+                        <li><span>3.</span> <a href="#project1">Projet n°1</a></li>
+                        <li><span>4.</span> <a href="#project2">Projet n°2</a></li>
+                        <li><span>5.</span> <a href="#project3">Projet n°3</a></li>
+                    </ul>
+                    <ul class="toc-list">
+                        <li><span>6.</span> <a href="#project4">Projet n°4</a></li>
+                        <li><span>7.</span> <a href="#project5">Projet n°5</a></li>
+                        <li><span>8.</span> <a href="#formations">Formation & motivation</a></li>
+                        <li><span>9.</span> <a href="#team">Mon équipe</a></li>
+                        <li><span>10.</span> <a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </section>
+
+        <!-- A PROPOS DE MOI -->
+        <section id="about" class="section" aria-labelledby="about-title">
+            <div class="side"></div>
+            <div class="container-principale">
+                <div class="about-left">
+                    <h2 id="about-title" class="toc-title">
+                        <span class="toc-upper">À propos de</span><br>
+                        <span class="toc-bold">moi</span>
+                    </h2>
+                    <div class="paragraphe">
+                        <p>Une brève introduction à mon parcours, ma passion et mes valeurs.</p>
+                        <p>Une brève introduction à mon parcours, ma passion et mes valeurs.</p>
+                    </div>   
+                </div>
+                <div class="about-right">
+                    <div class="goal">
+                        <div class="number number-big" role="presentation">01</div>
+                        <div class="text">
+                            <h3>GOALS UN</h3>
+                            <p>A peep at some distant orb has power to raise and purify our thoughts like a strain of sacred music.</p>
+                        </div>
+                    </div>
+                    <div class="goal">
+                        <div class="number number-big" role="presentation">02</div>
+                        <div class="text">
+                            <h3>GOALS DEUX</h3>
+                            <p>A peep at some distant orb has power to raise and purify our thoughts like a strain of sacred music.</p>
+                        </div>
+                    </div>
+                    <div class="goal">
+                        <div class="number" role="presentation">03</div>
+                        <div class="text">
+                            <h3>GOALS TROIS</h3>
+                            <p>A peep at some distant orb has power to raise and purify our thoughts like a strain of sacred music.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- COMPETENCES -->
+        <section id="skills" class="section" aria-labelledby="skills-title">
+            <div class="side"></div>
+            <div class="container-principale">
+
+                <h2 id="skills-title" class="toc-title">
+                    <span class="toc-upper">mes</span><br>
+                    <span class="toc-bold">Compétences</span>
+                </h2>
+
+                <div class="toc-grid container-skills" aria-describedby="skills-desc">
+                    <p id="skills-desc" class="visually-hidden">Liste de mes compétences techniques et personnelles.</p>
+                    <ul class="toc-list skills-list">
+                        <li><span>1.</span>HTML & CSS avancé </li>
+                        <li><span>2.</span>JavaScript & API Rest</li>
+                        <li><span>3.</span>Node.js & Express</li>
+                        <li><span>4.</span>Git & GitHub</li>
+                        <li><span>5.</span>Design UI/UX & Mobile-first</li>
+                    </ul>
+                    <ul class="toc-list skills-list">
+                        <li><span>6.</span>Bootstrap</li>
+                        <li><span>7.</span>MySQL & MongoDB</li>
+                        <li><span>8.</span>VSCode & npm</li>
+                        <li><span>9.</span>Accessibilité & SEO</li>
+                        <li><span>10.</span>Communication</li>
+                    </ul>
+                </div>        
+            </div> 
+        </section>
+
+        <!-- PROJET 1 -->
+        <section id="project1" class="project" aria-labelledby="project1-title">
+            <h2 id="project1-title" class="visually-hidden">Projet 1</h2>
+            <div class="side"></div>
+            <div class="container-principale">
+                <figure class="project-imagesOne align-left">
+                    <img src="assets/BlogDesign1.png" alt="Aperçu du blog design 1"class="lightbox-trigger" role="button" tabindex="0" aria-describedby="proj1-img1-desc" />
+                    <figcaption id="proj1-img1-desc">Capture d’écran du layout principal du blog</figcaption>
+                </figure>
+
+                <aside class="desc-header align-left" aria-labelledby="proj1-header-title">
+                    <h3 id="proj1-header-title">Projet 1</h3>
+                    <p>Brève présentation du concept et des objectifs.</p>
+                </aside>
+
+                <aside class="desc-detail" aria-labelledby="proj1-detail-title">
+                    <h4 id="proj1-detail-title" class="visually-hidden"> Détails du projet 1</h4>
+                    <p>Description plus approfondie : technos utilisées, architecture, défis relevés, etc.</p>
+                </aside>
+
+                <figure class="project-imagesTwo align-left">
+                    <img src="assets/BlogDesign2.png" alt="Deuxième capture du projet 1" class="lightbox-trigger" role="button" tabindex="0" aria-describedby="proj1-img2-desc" />
+                    <figcaption id="proj1-img2-desc">Aperçu de l’interface du formulaire de contact</figcaption>
+                </figure>
+            </div>
+        </section>
+
+<!-- ======================= PROJET 2 A 5 A MODIFIER COMME LE 1 ===================================== -->
+        <!-- PROJET 2 -->
+        <section id="project2" class="project">
+            <div class="side"></div>
+            <div class="container-principale">
+                <div class="project-imagesOne">
+                    <img src="assets/MinimalistDesign.png" alt="Capture du projet 1" class="lightbox-trigger" />
+                </div>
+                <div class="desc-imagesOne">
+                    <h2>Projet 2</h2>                
+                    <p>Description brève du projet.</p>  
+                </div>
+                <div class="desc-imagesTwo">
+                    <p>Description brève du projet.</p>
+                </div>        
+                <div class="project-imagesTwo">
+                    <img src="assets/MinimalistDesign2.png" alt="Deuxième capture du projet 1" class="lightbox-trigger" />
+                </div> 
+            </div>
+        </section>
+
+        <!-- PROJET 3 -->
+        <section id="project3" class="project">
+            <div class="side"></div>
+            <div class="container-principale">
+                <div class="project-imagesOne">
+                    <img src="assets/Fruity2.png" alt="Capture du projet 1" class="lightbox-trigger" />
+                </div>
+                <div class="desc-imagesOne">
+                    <h2>Projet 3</h2>                
+                    <p>Description brève du projet.</p>  
+                </div>
+                <div class="desc-imagesTwo">
+                    <p>Description brève du projet.</p>
+                </div>        
+                <div class="project-imagesTwo">
+                    <img src="assets/Fruity4.png" alt="Deuxième capture du projet 1" class="lightbox-trigger" />
+                </div>
+            </div>
+        </section>
+
+        <!-- PROJET 4 -->
+        <section id="project4" class="project">
+            <div class="side"></div>
+            <div class="container-principale">
+                <div class="project-imagesOne">
+                    <img src="assets/Tool.png" alt="Capture du projet 1" class="lightbox-trigger" />
+                </div>
+                <div class="desc-imagesOne">
+                    <h2>Projet 4</h2>                
+                    <p>Description brève du projet.</p>  
+                </div>
+                <div class="desc-imagesTwo">
+                    <p>Description brève du projet.</p>
+                </div>        
+                <div class="project-imagesTwo">
+                    <img src="assets/Tool.png" alt="Deuxième capture du projet 1" class="lightbox-trigger" />
+                </div>
+            </div>
+        </section>
+
+            <!-- PROJET 5 -->
+        <section id="project5" class="project">
+            <div class="side"></div>
+            <div class="container-principale">
+                <div class="project-imagesOne">
+                    <img src="assets/BlogDesign1.png" alt="Capture du projet 1" class="lightbox-trigger" />
+                </div>
+                <div class="desc-imagesOne">
+                    <h2>Projet 5</h2>                
+                    <p>Description brève du projet.</p>  
+                </div>
+                <div class="desc-imagesTwo">
+                    <p>Description brève du projet.</p>
+                </div>        
+                <div class="project-imagesTwo">
+                    <img src="assets/BlogDesign2.png" alt="Deuxième capture du projet 1" class="lightbox-trigger" />
+                </div>
+            </div>
+        </section>
+<!-- ======================= PROJET 2 A 5 A MODIFIER COMME LE 1 ===================================== -->
+
+
+        <!-- FORMATION ET APPRENTISSAGE -->
+        <section id="formations" class="section" role="region" aria-labelledby="formations-title">
+            <div class="side"></div>
+            <div class="container-principale">
+                <div class="formations-left">
+                    <h2 id="formations-title" class="toc-title">
+                        <span class="toc-upper">Apprentissage & </span><br>
+                        <span class="toc-bold">motivation</span>
+                    </h2>
+                    <div class="paragraphe" role="group" aria-labelledby="formations-title">
+                        <div class="parah-top">
+                            <p>Une brève introduction à mon parcours, ce qui me motive</p>
+                            <p>Une brève et courte introduction à mes motivations.</p>
+                            <p>Une brève introduction à mon parcours, ce qui étais difficile</p>
+                            <p>Une brève introduction à mon parcours.</p>
+                        </div>
+                        
+                        <div class="parah-bottom">
+                            <p class="align-right">Lorem ipsum dolor sit.</p>
+                            <p class="align-right">Lorem ipsum dolor sit amet, consectetur adipisicing.</p>
+                            <p class="align-right">Une brève introduction à mon parcours.</p>
+                            <p class="align-right">Une brève introduction à mon parcours, ce qui me motive</p>
+                            <p class="align-right">Explication sur la présence des pdf de mon cv et cl.</p>                        
+                        </div>
+                    </div>
+                    <div class="container-pdf">
+                        <div class="pdf-content align-left">
+                            <p>Mon curriculum vitae</p>
+                            <a href="cv.pdf" download class="hero-button" aria-label="Télécharger le CV de Buonomo Léa">Télécharger</a>
+                        </div>
+                        <div class="pdf-content align-right">
+                            <p>Ma lettre de motivation</p>
+                            <a href="lettre_de_motivation.pdf" download class="hero-button" aria-label="Télécharger la lettre de motivation de Buonomo Léa">Télécharger</a>
+                        </div>   
+                    </div>
+                </div>
+                <div class="formations-right">
+                    <div class="goal">
+                        <div class="number number-big">01</div>
+                        <div class="text">
+                            <h3>Apprentissage UN</h3>
+                            <p>Description des tâches et compétence acquise, des techno utiliser et des problèmes rencontrer.</p>
+                            <p>Description des tâches et compétence acquise, des techno utiliser et des problèmes rencontrer.</p>
+                            <p>Description des tâches et compétence acquise, des techno utiliser et des problèmes rencontrer.</p>
+                        </div>
+                    </div>
+                    <div class="goal">
+                        <div class="number number-big">02</div>
+                        <div class="text">
+                            <h3>Apprentissage DEUX</h3>
+                            <p>Description des tâches et compétence acquise, des techno utiliser et des problèmes rencontrer.</p>
+                            <p>Description des tâches et compétence acquise, des techno utiliser et des problèmes rencontrer.</p>
+                        </div>
+                    </div>
+                    <div class="goal">
+                        <div class="number number-big">03</div>
+                        <div class="text">
+                            <h3>Apprentissage TROIS</h3>
+                            <p>Description des tâches et compétence acquise, des techno utiliser et des problèmes rencontrer.</p>
+                            <p>Description des tâches et compétence acquise, des techno utiliser et des problèmes rencontrer.</p>
+                            <p>Description des tâches et compétence acquise, des techno utiliser et des problèmes rencontrer.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- MON EQUIPE -->
+        <section id="team" class="section" role="region" aria-labelledby="team-title">
+            <div class="side"></div>
+            <div class="container-principale">
+                <h2 id="team-title">
+                    <span class="toc-upper">mon</span><br>
+                    <span class="toc-bold">équipe</span>
+                </h2>
+                
+                <ul class="team-grid" role="list">
+                    <li class="grid-cell cardOne" role="listitem">
+                        <div class="team-card">
+                            <img src="assets/team/neuron-jw-unsplash.jpg" alt="Ma passion">
+                            <div class="info">
+                                <p class="name">Ma passion</p>
+                                <p class="role">Lead Engineer in motivation</p>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="grid-cell cardTwo" role="listitem">
+                        <div class="team-card">
+                            <img src="assets/team/neuron-milad-fakurian-unsplash.jpg" alt="Mes neurones">
+                            <div class="info">
+                                <p class="name">Mes neuronnes</p>
+                                <p class="role">Chief processing officer</p>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="grid-cell cardThree" role="listitem">
+                        <div class="team-card">
+                            <img src="assets/team/ordi-philipp-katzenberger-unsplash.jpg" alt="Mon ordinateur">
+                            <div class="info">
+                                <p class="name">Mon ordinateur</p>
+                                <p class="role">DevOps en chef</p>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="grid-cell cardFour" role="listitem">
+                        <div class="team-card">
+                            <img src="assets/team/happy-mike-meyers-unsplash.jpg" alt="Ma bonne humeur">
+                            <div class="info">
+                                <p class="name">Ma bonne humeur</p>
+                                <p class="role">Creative collaboration Engineer</p>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <!-- PAGE DE CONTACT -->
+    <footer id="contact" class="contact" role="contentinfo" aria-labelledby="contact-title">
+        <div class="side"></div>
+        <div class="container-principale">
+            <h2 id="contact-title">
+                <span class="toc-bold">contactez</span>
+                <span class="toc-upper">- moi</span><br>
+            </h2>
+            <!-- novalidate sur le formulaire si on gères la validation en JS -->
+            <form action="#" method="POST" novalidate>
+                <div class="container-form">
+                    <label for="name">Nom</label>
+                    <input type="text" id="name" name="name" required aria-invalid="false" aria-describedby="err-name" />
+
+                    <div id="err-name" class="error" aria-live="polite">
+                        <!-- message d’erreur injecté dynamiquement ici -->
+                    </div>          
+                </div>
+
+                <div class="container-form">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required aria-invalid="false" aria-describedby="err-email" />
+                    
+                    <div id="err-email" class="error" aria-live="polite">
+                        <!-- message d’erreur injecté dynamiquement ici -->
+                    </div>  
+                </div>
+                <div class="container-form">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="5" required aria-invalid="false" aria-describedby="err-message"></textarea>
+                
+                    <div id="err-message" class="error" aria-live="polite">
+                        <!-- message d’erreur injecté dynamiquement ici -->
+                    </div>  
+                </div>
+                <div class="container-btn">
+                    <button type="submit" class="hero-button">Envoyer</button>                
+                </div>
+            </form>            
+        </div>
+    </footer>
+</body>
+</html>
