@@ -26,6 +26,7 @@
 
     <!-- 6. Preconnect & Preload (fonts, API) -->
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="preload" as="font" href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" type="font/woff2" crossorigin>
 
     <!-- 7. Open Graph / Social sharing -->
@@ -103,30 +104,34 @@
                         <h3 class="social-title">Développeuse web</h3>
                         <div class="social-icons">
                             <a href="https://github.com/…" class="social-link" aria-label="GitHub de Buonomo Léa" target="_blank" rel="noopener">
-                                <svg aria-hidden="true" focusable="false" width="24" height="24" viewBox="0 0 24 24">
+                                <i class="fa-brands fa-github fa-xl"></i>
+                                <!-- <svg aria-hidden="true" focusable="false" width="24" height="24" viewBox="0 0 24 24">
                                     <path d="M12 0C5.37 … Z" fill="currentColor"/>
-                                </svg>
+                                </svg> -->
                                 <span class="visually-hidden">GitHub</span>
                             </a>
 
-                            <a href="https://twitter.com" class="social-link" aria-label="Twitter de Buonomo Léa" target="_blank" rel="noopener">
-                                <svg aria-hidden="true" focusable="false" width="24" height="24" viewBox="0 0 24 24">
-                                    <path d="M23.9 4.6 … Z" fill="currentColor"/>
-                                </svg>
-                                <span class="visually-hidden">Twitter</span>
-                            </a>
-
                             <a href="https://linkedin.com" class="social-link"aria-label="LinkedIn de Buonomo Léa" target="_blank" rel="noopener">
-                                <svg aria-hidden="true" focusable="false" width="24" height="24" viewBox="0 0 24 24">
+                                <i class="fa-brands fa-linkedin-in fa-xl"></i>
+                                <!-- <svg aria-hidden="true" focusable="false" width="24" height="24" viewBox="0 0 24 24">
                                     <path d="M4.98 3.5 … Z" fill="currentColor"/>
-                                </svg>
+                                </svg> -->
                                 <span class="visually-hidden">LinkedIn</span>
                             </a>
 
+                            <a href="https://twitter.com" class="social-link" aria-label="Twitter de Buonomo Léa" target="_blank" rel="noopener">
+                                <i class="fa-brands fa-codepen fa-xl"></i>
+                                <!-- <svg aria-hidden="true" focusable="false" width="24" height="24" viewBox="0 0 24 24">
+                                    <path d="M23.9 4.6 … Z" fill="currentColor"/>
+                                </svg> -->
+                                <span class="visually-hidden">Twitter</span>
+                            </a>
+
                             <a href="https://instagram.com" class="social-link" aria-label="Instagram de Buonomo Léa" target="_blank" rel="noopener">
-                                <svg aria-hidden="true" focusable="false" width="24" height="24" viewBox="0 0 24 24">
+                                <i class="fa-brands fa-instagram fa-xl"></i>
+                                <!-- <svg aria-hidden="true" focusable="false" width="24" height="24" viewBox="0 0 24 24">
                                     <path d="M12 2.2 … Z" fill="currentColor"/>
-                                </svg>
+                                </svg> -->
                                 <span class="visually-hidden">Instagram</span>
                             </a>
                         </div>
@@ -273,24 +278,29 @@
             </div>
         </section>
 
-<!-- ======================= PROJET 2 A 5 A MODIFIER COMME LE 1 ===================================== -->
         <!-- PROJET 2 -->
         <section id="project2" class="project">
             <div class="side"></div>
             <div class="container-principale">
-                <div class="project-imagesOne">
-                    <img src="assets/MinimalistDesign.png" alt="Capture du projet 1" class="lightbox-trigger" />
-                </div>
-                <div class="desc-imagesOne">
-                    <h2>Projet 2</h2>                
-                    <p>Description brève du projet.</p>  
-                </div>
-                <div class="desc-imagesTwo">
-                    <p>Description brève du projet.</p>
-                </div>        
-                <div class="project-imagesTwo">
-                    <img src="assets/MinimalistDesign2.png" alt="Deuxième capture du projet 1" class="lightbox-trigger" />
-                </div> 
+                <figure class="project-imagesOne align-left">
+                    <img src="assets/MinimalistDesign.png" alt="Aperçu du design minimalist 1"class="lightbox-trigger" role="button" tabindex="0" aria-describedby="proj1-img1-desc" />
+                    <figcaption id="proj2-img1-desc">Capture d’écran du design minimalist</figcaption>
+                </figure>
+
+                <aside class="desc-header align-left" aria-labelledby="proj2-header-title">
+                    <h3 id="proj2-header-title">Projet 2</h3>
+                    <p>Brève présentation du concept et des objectifs.</p>
+                </aside>
+
+                <aside class="desc-detail" aria-labelledby="proj2-detail-title">
+                    <h4 id="proj2-detail-title" class="visually-hidden"> Détails du projet 2</h4>
+                    <p>Description plus approfondie : technos utilisées, architecture, défis relevés, etc.</p>
+                </aside>
+
+                <figure class="project-imagesTwo align-left">
+                    <img src="assets/MinimalistDesign2.png" alt="Deuxième capture du projet 2" class="lightbox-trigger" role="button" tabindex="0" aria-describedby="proj1-img2-desc" />
+                    <figcaption id="proj2-img2-desc">Aperçu de l’interface du design minimalist</figcaption>
+                </figure>
             </div>
         </section>
 
@@ -298,19 +308,25 @@
         <section id="project3" class="project">
             <div class="side"></div>
             <div class="container-principale">
-                <div class="project-imagesOne">
-                    <img src="assets/Fruity2.png" alt="Capture du projet 1" class="lightbox-trigger" />
-                </div>
-                <div class="desc-imagesOne">
-                    <h2>Projet 3</h2>                
-                    <p>Description brève du projet.</p>  
-                </div>
-                <div class="desc-imagesTwo">
-                    <p>Description brève du projet.</p>
-                </div>        
-                <div class="project-imagesTwo">
-                    <img src="assets/Fruity4.png" alt="Deuxième capture du projet 1" class="lightbox-trigger" />
-                </div>
+                <figure class="project-imagesOne align-left">
+                    <img src="assets/Fruity2.png" alt="Aperçu du site Fruity 1"class="lightbox-trigger" role="button" tabindex="0" aria-describedby="proj1-img1-desc" />
+                    <figcaption id="proj3-img1-desc">Capture d’écran du layout principal du blog</figcaption>
+                </figure>
+
+                <aside class="desc-header align-left" aria-labelledby="proj3-header-title">
+                    <h3 id="proj3-header-title">Projet 3</h3>
+                    <p>Brève présentation du concept et des objectifs.</p>
+                </aside>
+
+                <aside class="desc-detail" aria-labelledby="proj3-detail-title">
+                    <h4 id="proj3-detail-title" class="visually-hidden"> Détails du projet 3</h4>
+                    <p>Description plus approfondie : technos utilisées, architecture, défis relevés, etc.</p>
+                </aside>
+
+                <figure class="project-imagesTwo align-left">
+                    <img src="assets/Fruity4.png" alt="Deuxième capture du projet 3" class="lightbox-trigger" role="button" tabindex="0" aria-describedby="proj1-img2-desc" />
+                    <figcaption id="proj3-img2-desc">Aperçu de l’interface du formulaire de contact</figcaption>
+                </figure>
             </div>
         </section>
 
@@ -318,19 +334,25 @@
         <section id="project4" class="project">
             <div class="side"></div>
             <div class="container-principale">
-                <div class="project-imagesOne">
-                    <img src="assets/Tool.png" alt="Capture du projet 1" class="lightbox-trigger" />
-                </div>
-                <div class="desc-imagesOne">
-                    <h2>Projet 4</h2>                
-                    <p>Description brève du projet.</p>  
-                </div>
-                <div class="desc-imagesTwo">
-                    <p>Description brève du projet.</p>
-                </div>        
-                <div class="project-imagesTwo">
-                    <img src="assets/Tool.png" alt="Deuxième capture du projet 1" class="lightbox-trigger" />
-                </div>
+                <figure class="project-imagesOne align-left">
+                    <img src="assets/Tool.png" alt="Aperçu du site Tooll frontend 1"class="lightbox-trigger" role="button" tabindex="0" aria-describedby="proj1-img1-desc" />
+                    <figcaption id="proj4-img1-desc">Capture d’écran du layout principal du blog</figcaption>
+                </figure>
+
+                <aside class="desc-header align-left" aria-labelledby="proj4-header-title">
+                    <h3 id="proj4-header-title">Projet 4</h3>
+                    <p>Brève présentation du concept et des objectifs.</p>
+                </aside>
+
+                <aside class="desc-detail" aria-labelledby="proj4-detail-title">
+                    <h4 id="proj4-detail-title" class="visually-hidden"> Détails du projet 4</h4>
+                    <p>Description plus approfondie : technos utilisées, architecture, défis relevés, etc.</p>
+                </aside>
+
+                <figure class="project-imagesTwo align-left">
+                    <img src="assets/Tool.png" alt="Deuxième capture du projet 4" class="lightbox-trigger" role="button" tabindex="0" aria-describedby="proj1-img2-desc" />
+                    <figcaption id="proj4-img2-desc">Aperçu de l’interface du formulaire de contact</figcaption>
+                </figure>
             </div>
         </section>
 
@@ -338,23 +360,27 @@
         <section id="project5" class="project">
             <div class="side"></div>
             <div class="container-principale">
-                <div class="project-imagesOne">
-                    <img src="assets/BlogDesign1.png" alt="Capture du projet 1" class="lightbox-trigger" />
-                </div>
-                <div class="desc-imagesOne">
-                    <h2>Projet 5</h2>                
-                    <p>Description brève du projet.</p>  
-                </div>
-                <div class="desc-imagesTwo">
-                    <p>Description brève du projet.</p>
-                </div>        
-                <div class="project-imagesTwo">
-                    <img src="assets/BlogDesign2.png" alt="Deuxième capture du projet 1" class="lightbox-trigger" />
-                </div>
+                 <figure class="project-imagesOne align-left">
+                    <img src="assets/BlogDesign1.png" alt="Aperçu du blog design 1"class="lightbox-trigger" role="button" tabindex="0" aria-describedby="proj1-img1-desc" />
+                    <figcaption id="proj5-img1-desc">Capture d’écran du layout principal du blog</figcaption>
+                </figure>
+
+                <aside class="desc-header align-left" aria-labelledby="proj5-header-title">
+                    <h3 id="proj5-header-title">Projet 5</h3>
+                    <p>Brève présentation du concept et des objectifs.</p>
+                </aside>
+
+                <aside class="desc-detail" aria-labelledby="proj5-detail-title">
+                    <h4 id="proj5-detail-title" class="visually-hidden"> Détails du projet 5</h4>
+                    <p>Description plus approfondie : technos utilisées, architecture, défis relevés, etc.</p>
+                </aside>
+
+                <figure class="project-imagesTwo align-left">
+                    <img src="assets/BlogDesign2.png" alt="Deuxième capture du projet 5" class="lightbox-trigger" role="button" tabindex="0" aria-describedby="proj1-img2-desc" />
+                    <figcaption id="proj5-img2-desc">Aperçu de l’interface du formulaire de contact</figcaption>
+                </figure>
             </div>
         </section>
-<!-- ======================= PROJET 2 A 5 A MODIFIER COMME LE 1 ===================================== -->
-
 
         <!-- FORMATION ET APPRENTISSAGE -->
         <section id="formations" class="section" role="region" aria-labelledby="formations-title">
