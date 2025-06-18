@@ -31,6 +31,8 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    /* -webkit-user-select: none;
+    user-select: none; */
 }
 html {
     scroll-behavior: smooth;
@@ -222,12 +224,35 @@ a, li {
                 border: 2px solid var(--primary);
                 background-color: var(--bg-color);
                 border-radius: 50%;
-                text-indent: -9999px;
+                /* text-indent: -9999px; */
                 transition: background-color .2s linear;
             }
             .nav-mid a.dot:hover {
                 background-color: var(--primary);
-            }            
+            }
+            /* TOOLTIPS */
+                .nav-mid a.dot::before {
+                    content: attr(aria-label);
+                    width: auto;
+                    color: var(--bg-color);
+                    position: absolute;
+                    left: calc(100% + 10px);
+                    top: 50%;
+                    transform: translateY(-50%);
+                    white-space: nowrap;
+                    background-color: var(--primary);
+                    padding: var(--spacing-m) var(--spacing-paraph);
+                    border-radius: 6px;
+                    font-size: var(--spacing-m);
+                    opacity: 0;
+                    pointer-events: none;
+                    transition: opacity 0.2s ease-in-out;
+                    z-index: 10;
+                }
+                .nav-mid a.dot:hover::before {
+                    opacity: 1;
+                }
+            /* TRAITS DECORATIFS */
             .nav-mid a.dot::after {
                 position: absolute;
                 content: '';
@@ -241,7 +266,6 @@ a, li {
             .nav-mid a.dot-end::after {
                 height: 100%;
             }
-
             .nav-mid a.dot.active {
                 background-color: var(--primary);
             } 
@@ -299,7 +323,7 @@ a, li {
         letter-spacing: -2px;
         z-index: 3;
     }
-/* --------- Informations de gauche ------------- */
+/* --------- Gauche ------------- */
 .hero-left {
     grid-area: hero-left;
     justify-content: flex-end;
@@ -333,7 +357,6 @@ a, li {
                 justify-content: center;
                 width: 30px;
                 height: 30px;
-                border: 2px solid var(--primary);
                 font-weight: bold;
                 text-decoration: none;
                 border-radius: 50%;
@@ -341,7 +364,7 @@ a, li {
                 margin-left: var(--spacing-m);
                 margin-top: var(--spacing-xl);
             } 
-/* --------- Informations de droite ----------- */
+/* --------- Droite ----------- */
 .hero-right {
     grid-area: hero-right;
     align-items: flex-start;
