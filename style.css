@@ -145,17 +145,14 @@ a, li {
     .container-principale h2 {
         text-transform: uppercase;
     }
-    .paraph-space {
-        margin-top: var(--spacing-xl);
-    }
     img {
         opacity: var(--opa);
     }
-/* Scroll des sections si besoin
-#project1, #project2, #project3, #project4, #project5 {
-    overflow-y: auto;
-} */
+/* Scroll des sections si besoin #project1, #project2, #project3, #project4, #project5 */
 
+#formations {
+    height: min-content;
+}
 
 /* ================================================
    SIDEBAR
@@ -383,6 +380,12 @@ a, li {
             line-height: 1.4;
             color: var(--text-color);
         }
+        .hero-paragraphe {
+            margin: var(--spacing-m) 0;
+        }
+                .paraph-space {
+                    margin-top: var(--spacing-small);
+                }
         .hero-button {
             position: relative;
             display: inline-flex;
@@ -501,17 +504,20 @@ a, li {
 .about-left .paragraphe {
     padding-right: 20%;
 }
+.about-left .paragraphe p {
+    padding-top: var(--spacing-m);
+}
 .about-right { grid-area: about-right; }
 
     .goal {
         display: flex;
-        align-items: center;
         margin-top: var(--spacing-xl);
     }
         .number {
             position: relative;
             background-color: var(--primary);
             color: white;
+            height: fit-content;
             padding: 10px;
             font-size: var(--spacing-xl);
             margin-right: var(--spacing-paraph);
@@ -522,12 +528,9 @@ a, li {
             top: 0;
             left: 50%;
             width: var(--dot-border-width);
-            height: 100%;
+            height: 300%;
             background-color: var(--primary);
             z-index: -2;
-        }
-        .number-big::after {
-            height: 300%;
         }
             .text h3 {
                 font-size: var(--spacing-xl);
@@ -577,6 +580,9 @@ a, li {
     display: block;
     height: auto;
 }
+    .project h3 {
+        text-transform: uppercase;
+    }
 /* ================================================
    PROJET - Lightbox
 ================================================= */
@@ -696,6 +702,12 @@ a, li {
         justify-content: flex-end;
         align-items: flex-end;
     }
+    .parah-top {
+        padding-right: var(--spacing-m);
+    }
+    .parah-bottom {
+        padding-left: var(--spacing-xl);
+    }
     .align-right {
         text-align: right;
     }
@@ -711,6 +723,9 @@ a, li {
     flex-direction: column;
     justify-content: flex-end;
 }
+    /* .formations-right .goal:first-of-type {
+        margin-top: 0;
+    } */
     .formations-right .number {
         margin-bottom: var(--spacing-xl);
     }
@@ -718,12 +733,19 @@ a, li {
         padding-top: var(--spacing-xl);
     }
     .formations-right .text p {
-        padding: 0;
-        margin-top: var(--spacing-small);
+        margin-top: var(--spacing-m);
         font-size: 1rem;
         color: var(--text-color);
     }
-
+        .number-one::after {
+            height: 500%;
+        }
+        .number-two::after {
+            height: 400%;
+        }
+        .number-three::after {
+            height: 300%;
+        }
 /* ====================================================
    MON EQUIPE
 ==================================================== */
