@@ -488,7 +488,7 @@ a, li {
    ABOUT
 ================================================= */
 #about .container-principale {
-    padding: 10%;
+    padding: 5% 10%;
     display: grid;
     grid-template-columns: 50% 50%;
     grid-template-areas: "about-left about-right";
@@ -531,14 +531,14 @@ a, li {
         }
             .text h3 {
                 font-size: var(--spacing-xl);
-                padding-top: var(--spacing-paraph);
+                margin-bottom: var(--spacing-m);
             }
             .text p {
-                padding-bottom: var(--spacing-paraph);
-                margin-top: var(--spacing-small);
+                padding: var(--spacing-small) 0;
                 font-size: 1rem;
                 color: var(--text-color);
             }
+
 /* ================================================
    SKILLS
 ================================================= */
