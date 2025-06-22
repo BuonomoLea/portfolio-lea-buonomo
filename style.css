@@ -5,7 +5,7 @@
    VARIABLES ET RESET
 ====================================================== */
 :root {
-    --primary: #4426f1;
+    --primary: #2E0EF1;
     --bg-color: #f8f4e3;
     --text-color: #000000;
 
@@ -135,6 +135,7 @@ a, li {
     grid:
         "sidebar container-principale" 1fr
         / 10% 90%;
+    height: 100%;
 }
     .side {
         grid-area: sidebar;
@@ -148,11 +149,8 @@ a, li {
     img {
         opacity: var(--opa);
     }
-/* Scroll des sections si besoin #project1, #project2, #project3, #project4, #project5 */
+/* Scroll des sections si besoin  */
 
-#formations {
-    height: min-content;
-}
 
 /* ================================================
    SIDEBAR
@@ -491,12 +489,14 @@ a, li {
    ABOUT
 ================================================= */
 #about .container-principale {
-    padding: 5% 10%;
     display: grid;
     grid-template-columns: 50% 50%;
     grid-template-areas: "about-left about-right";
 }
-.about-left { grid-area: about-left; }
+.about-left { 
+    grid-area: about-left;
+    padding: 5% 10% 0 10%;
+}
 
 .about-left .toc-title, .about-left .paragraphe:first-of-type {
     margin-top: var(--spacing-xl);
@@ -507,7 +507,10 @@ a, li {
 .about-left .paragraphe p {
     padding-top: var(--spacing-m);
 }
-.about-right { grid-area: about-right; }
+.about-right { 
+    grid-area: about-right;
+    padding: 0 10% 5% 5%;
+}
 
     .goal {
         display: flex;
@@ -582,6 +585,9 @@ a, li {
 }
     .project h3 {
         text-transform: uppercase;
+    }
+    figcaption, aside p {
+        padding-top: var(--spacing-m);
     }
 /* ================================================
    PROJET - Lightbox
@@ -946,18 +952,21 @@ a, li {
     /* ===== ABSOLUTE - FIN ===== */
     .hero-content {
         grid:
-        "hero-left" 50%
-        "hero-right" 50% / 1fr;
+            "hero-left" 40%
+            "hero-right" 60% / 1fr;
     }
         .hero-left {
-            padding: 25% 15%;
+            padding: 25% 15% 0 15%;
+        }
+        .social-icons {
+            padding-top: 0;
         }
             .social {
                 height: 100%;
                 width: 100%;
             }
         .hero-right {
-            padding: 5% 15%;
+            padding: 5% 15% 0 15%;
         }            
             .social-right {
                 height: 100%;
@@ -979,8 +988,11 @@ a, li {
         padding: var(--spacing-m) 0;
     }
 /* ========== COMPETENCES ======== */    
-    #skills .toc-bold, #formations .toc-upper, #formations .toc-bold  {
+    #skills .toc-upper, #skills .toc-bold, #formations .toc-upper, #formations .toc-bold  {
         font-size: var(--spacing-xl);
+    }
+    #skills .container-principale {
+        padding: 10%;
     }
 /* ========== ABOUT ======== */
     #about .container-principale, #formations .container-principale {
@@ -998,6 +1010,9 @@ a, li {
         .parah-bottom {
             padding: var(--spacing-xl) 0;
         }
+        .about-right .number {
+            height: 400%;
+        }
         .goal {
             display: flex;
             align-items: flex-start;
@@ -1011,9 +1026,6 @@ a, li {
         font-size: var(--spacing-xl);
         text-transform: uppercase;
     }
-        figcaption, aside p {
-            padding-top: var(--spacing-m);
-        }
         .grid-cell {
             justify-content: center;
         }
@@ -1036,6 +1048,9 @@ a, li {
                 "toc-title" 15%
                 "paragraphe" 65%
                 "container-pdf" 20%;
+        }
+        .formations-right {
+            padding: var(--spacing-m) 0;
         }
             .formations-left .paragraphe, .container-pdf {
                 padding: var(--spacing-m);
