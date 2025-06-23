@@ -18,13 +18,25 @@ lightbox.addEventListener('click', (e) => {
 });
 
 // A FAIRE : ----------------------------------------------------------------
-// aria-current="page" : tu injectes/triées dynamiquement ce code (via JS) uniquement sur le lien qui pointe vers la section visible.
+// aria-current="page" : injecter/trier dynamiquement ce code uniquement sur le lien qui pointe vers la section visible.
+// ajouter dynamiquement aria-current="page" sur <a href="#about"…>
 // aucun aria-current sur nav-mid tant que l’on n’est pas entré dans #about.
 // Une fois que #about devient la section “actuelle” (au scroll ou quand on clique)
-// ajoutes dynamiquement aria-current="page" sur <a href="#about"…>
-// Et tu veilles à retirer aria-current de l’ancien lien avant de le placer sur le nouveau.
+// veiller à retirer aria-current de l’ancien lien avant de le placer sur le nouveau.
 
 // AJOUTER LA VALIDATION DU FORMULAIRE COMME :
 // inputEmail.setAttribute('aria-invalid', 'true');
 // errEmailDiv.textContent = 'Veuillez saisir une adresse email valide.';
 // mettre à jour aria-invalid / textContent dynamiquement
+
+// heroModel
+// const model = document.getElementById('heroModel');
+// let angle = 0;
+
+// function rotateCamera() {
+//     angle += 0.003;
+//     model.cameraOrbit = `${angle}rad 75deg 2.5m`;
+//     requestAnimationFrame(rotateCamera);
+// }
+
+// rotateCamera();

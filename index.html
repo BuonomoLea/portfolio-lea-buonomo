@@ -1,35 +1,27 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <!-- 1. Encodage + compatibilité -->
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-
-    <!-- 2. Responsive + accessibilité -->
+    <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge"> -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <meta name="theme-color" content="#ffffff">            barre de navigateur colorée sur mobile -->
-    <meta name="robots" content="index,follow">            <!-- pour moteurs de recherche -->
+    <!-- <meta name="theme-color" content="#f8f4e3"> -->
+    <meta name="robots" content="index,follow">
 
-    <!-- 3. SEO On-page -->
     <title>Portfolio • Léa Buonomo • Développeuse web</title>
     <meta name="description" content="Découvrez le portfolio de Léa Buonomo, développeuse web spécialisée en HTML/CSS avancé, JavaScript et accessibilité.">
 
-    <!-- 4. Canonical & Multilang -->
-    <link rel="canonical" href="https://ton-site.com/">
-    
-    <!-- <link rel="alternate" hreflang="en" href="https://ton-site.com/en/">   Pour la version en anglais -->
+    <!-- 4. Canonical & Multilang
+    <link rel="canonical" href="https://site.com/">
+    <link rel="alternate" hreflang="en" href="https://site.com/en/">   Pour la version en anglais -->
 
-    <!-- 5. Favicons & PWA -->
     <link rel="icon" href="assets/ico/favicon.ico" type="image/x-icon">
     <link rel="apple-touch-icon" sizes="180x180" href="assets/ico/apple-touch-icon.png">
     <link rel="manifest" href="assets/ico/site.webmanifest">
 
-    <!-- 6. Preconnect & Preload (fonts, API) -->
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="preload" as="font" href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" type="font/woff2" crossorigin>
 
-    <!-- 7. Open Graph / Social sharing -->
     <meta property="og:type" content="website">
     <meta property="og:locale" content="fr_FR">
     <meta property="og:url" content="https://ton-site.com/">
@@ -38,6 +30,10 @@
     <meta property="og:image" content="https://ton-site.com/og-image.png">
 
     <link rel="stylesheet" href="style.css" />
+
+    <!-- <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script> -->
+     <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+<script nomodule src="https://unpkg.com/@google/model-viewer/dist/model-viewer-legacy.js"></script>
     <script src="index.js" defer></script>
 </head>
 <body>
@@ -85,7 +81,9 @@
         <section id="hero">
             <div class="hero-content" role="region" aria-labelledby="hero-title">
                 <!-- Titre et Image positionné au centre de la view -->
-                <div class="hero-image" aria-hidden="true"></div>
+                <div class="hero-image" aria-hidden="true">
+                    <!-- <model-viewer id="heroModel" class="obj" src="assets/obj/Computer90s.glb" alt="Modèle 3D abstrait" auto-rotate camera-controls exposure="1.2"></model-viewer> -->
+                </div>
                 <h1 id="hero-title" class="title">PORTFOLIO</h1>
 
                 <!-- Informations de gauche -->
@@ -325,13 +323,13 @@
             <div class="side"></div>
             <div class="container-principale">
                 <figure class="project-imagesOne align-left">
-                    <img src="assets/Tool.png" alt="Aperçu du site Tooll frontend 1"class="lightbox-trigger" role="button" tabindex="0" aria-describedby="proj1-img1-desc" loading="lazy" />
+                    <img src="assets/Tool1.png" alt="Aperçu du site Tooll frontend 1"class="lightbox-trigger" role="button" tabindex="0" aria-describedby="proj1-img1-desc" loading="lazy" />
                     <figcaption id="proj4-img1-desc">Capture d’écran du layout principal du blog</figcaption>
                 </figure>
 
                 <aside class="desc-header align-left" aria-labelledby="proj4-header-title">
                     <h3 id="proj4-header-title">Projet 4</h3>
-                    <p>Brève présentation du concept et des objectifs.</p>
+                    <p>Mon site d'outil Front End à utiliser sans modération.</p>
                 </aside>
 
                 <aside class="desc-detail" aria-labelledby="proj4-detail-title">
@@ -340,7 +338,7 @@
                 </aside>
 
                 <figure class="project-imagesTwo align-left">
-                    <img src="assets/Tool.png" alt="Deuxième capture du projet 4" class="lightbox-trigger" role="button" tabindex="0" aria-describedby="proj1-img2-desc" loading="lazy" />
+                    <img src="assets/Tool2.png" alt="Deuxième capture du projet 4" class="lightbox-trigger" role="button" tabindex="0" aria-describedby="proj1-img2-desc" loading="lazy" />
                     <figcaption id="proj4-img2-desc">Aperçu de l’interface du formulaire de contact</figcaption>
                 </figure>
             </div>
