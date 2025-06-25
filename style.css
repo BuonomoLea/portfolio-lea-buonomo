@@ -1,6 +1,3 @@
-/* @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap'); */
-
-
 /* ======================================================
    VARIABLES ET RESET
 ====================================================== */
@@ -10,17 +7,18 @@
     --text-color: #000000;
 
     /* Tailles */
-    --dot-size: 1.25rem;   /* 20px */
-    --dot-border-width: .125rem; /* 2px */
+    --dot-size: 1.25rem;
+    --dot-border-width: .125rem;
     --spacing-small: .2rem;
     --spacing-m: 1rem;    
     --spacing-paraph: 1.5rem;
     --spacing-xl: 2rem;
     --spacing-xxl: 4rem;
 
+    --sb-size: 14px;
+
     /* Polices */
     --subtitle-family: var( --subtitle-family);
-    /* --title-family: "Inter", sans-serif; */
     --body-family: Arial, Helvetica, sans-serif;
     --compressed: scaleY(.7);
 
@@ -65,7 +63,29 @@ body {
     background-color: var(--bg-color);
     color: var(--text-color);
     font-family: var(--body-family);
+
+
 }
+/* SCROLLBAR */
+body::-webkit-scrollbar {
+  width: var(--sb-size)
+}
+body::-webkit-scrollbar-track {
+  background: var(--bg-color);
+  border-radius: 3px;
+}
+body::-webkit-scrollbar-thumb {
+  background: var(--primary);
+  border-radius: 3px;
+  
+}
+@supports not selector(::-webkit-scrollbar) {
+  body {
+    scrollbar-color: var(--primary)
+                     var(--bg-color);
+  }
+}
+
 h1,h2,h3,h4,h5,h6 {
     color: var(--primary);
 }
@@ -86,7 +106,6 @@ a, li {
         background: #000; color: #fff;
         padding: .5em;
     }
-
     /* Focus style */
     .hero-button:focus-visible,.social-link:focus-visible,
     .social-link:hover, .toc-list li a:focus-visible, .skills-list li a:focus-visible,
@@ -300,28 +319,26 @@ a, li {
         top: 50%;
         transform: translateX(-50%) translateY(-50%);        
         width: 35%;
-        height: 75%;
+        height: 50%;
         background: transparent;
-        /*background-color: var(--text-color); background-image: url("assets/Format\ mobile-first.png");
-        background-size: cover;
-        background-position: center; opacity: .2;*/
-        
         border-radius: 8px;
-        z-index: -3;
+        z-index: 9999;
     }
     #heroModel {
         width: 100%;
         height: 100%;
         background: transparent;
         display: block;
-
-        model-viewer {
-            position: absolute;
-            top: 0; left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 1;
-        }
+        filter: brightness(1.1) hue-rotate(55deg);
+    }
+    #heroModel model-viewer {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        transform: scale(5);
     }
     .title {
         position: absolute;
@@ -379,7 +396,7 @@ a, li {
     align-items: flex-start;
     justify-content: flex-end;
     text-align: left;
-    padding: 25% 15% 17% 50%;
+    padding: 25% 15% 17% 40%;
 }
     .social-right {
         display: flex;
@@ -596,9 +613,16 @@ a, li {
     border-radius: 8px;
     display: block;
     height: auto;
+    transition: transform .2s linear;
+}
+.project-imagesOne img:hover, .project-imagesTwo img:hover {
+    transform: scale(1.06);
 }
     .project h3 {
         text-transform: uppercase;
+    }
+    figcaption {
+        font-size: var(--sb-size);
     }
     figcaption, aside p {
         padding-top: var(--spacing-m);
@@ -651,23 +675,6 @@ a, li {
     from { opacity: 0; }
     to { opacity: 1; }
 }
-
-
-/* ================================================
-   PROJET 2
-================================================= */
-
-/* ================================================
-   PROJET 3
-================================================= */
-
-/* ================================================
-   PROJET 4
-================================================= */
-
-/* ================================================
-   PROJET 4
-================================================= */
 
 /* ================================================
    FORMATIONS
@@ -960,8 +967,8 @@ a, li {
     }
     .hero-image {
         top: 30%;
-        width: 75%;
-        height: 45%;
+        width: 50%;
+        height: 30%;
     }
     /* ===== ABSOLUTE - FIN ===== */
     .hero-content {
@@ -970,11 +977,30 @@ a, li {
             "hero-right" 60% / 1fr;
     }
         .hero-left {
-            padding: 25% 15% 0 15%;
+            padding: 25% 10% 0 15%;
         }
         .social-icons {
             padding-top: 0;
+            display: flex;
+            align-items: flex-end;
+            justify-content: flex-start;
+            flex-direction: column;            
+            width: 100%;
+            height: 100%;
         }
+        .social-link {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 30px;
+        height: 100%;
+        font-weight: bold;
+        text-decoration: none;
+        border-radius: 50%;
+        font-size: 0.8rem;
+        margin-top: 0;
+        margin-bottom: var(--spacing-xl);
+    }
             .social {
                 height: 100%;
                 width: 100%;

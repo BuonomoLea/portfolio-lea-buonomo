@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge"> -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <meta name="theme-color" content="#f8f4e3"> -->
+    <meta name="theme-color" content="#f8f4e3">
     <meta name="robots" content="index,follow">
 
     <title>Portfolio • Léa Buonomo • Développeuse web</title>
     <meta name="description" content="Découvrez le portfolio de Léa Buonomo, développeuse web spécialisée en HTML/CSS avancé, JavaScript et accessibilité.">
 
-    <!-- 4. Canonical & Multilang
+    <!-- Multilang
     <link rel="canonical" href="https://site.com/">
     <link rel="alternate" hreflang="en" href="https://site.com/en/">   Pour la version en anglais -->
 
@@ -20,7 +20,6 @@
 
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="preload" as="font" href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" type="font/woff2" crossorigin>
 
     <meta property="og:type" content="website">
     <meta property="og:locale" content="fr_FR">
@@ -31,9 +30,8 @@
 
     <link rel="stylesheet" href="style.css" />
 
-    <!-- <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script> -->
-     <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
-<script nomodule src="https://unpkg.com/@google/model-viewer/dist/model-viewer-legacy.js"></script>
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+
     <script src="index.js" defer></script>
 </head>
 <body>
@@ -82,8 +80,9 @@
             <div class="hero-content" role="region" aria-labelledby="hero-title">
                 <!-- Titre et Image positionné au centre de la view -->
                 <div class="hero-image" aria-hidden="true">
-                    <!-- <model-viewer id="heroModel" class="obj" src="assets/obj/Computer90s.glb" alt="Modèle 3D abstrait" auto-rotate camera-controls exposure="1.2"></model-viewer> -->
+                    <model-viewer id="heroModel" class="obj" src="assets/obj/Computer90s.glb" alt="Modèle 3D abstrait" camera-controls interaction-prompt="none" camera-orbit="0deg 75deg 0.21m" exposure="1.2"></model-viewer>
                 </div>
+                
                 <h1 id="hero-title" class="title">PORTFOLIO</h1>
 
                 <!-- Informations de gauche -->
@@ -119,8 +118,8 @@
                 <div class="hero-right">
                     <div class="social-right">
                         <div class="hero-paragraphe">
-                            <p class="subtitle">Avec determination j'ai fait le choix de me reconvertir dans développement web.</p>
                             <p class="subtitle">Après avoir acquis de solides compétences en Front End, je complète actuellement mon apprentissage en me formant au Back End.</p>
+                            <p class="subtitle paraph-space">Ici je vous présente quelques uns de mes projet et un peu de moi.</p>
                             <p class="subtitle paraph-space">Je vous souhaite la bienvenue sur mon portfolio et bonne découverte !</p>
                         </div>
                         <a href="#project1" class="hero-button" role="button">Mes projets <span class="arrow">&rarr;</span></a>
@@ -242,23 +241,39 @@
             <div class="side"></div>
             <div class="container-principale">
                 <figure class="project-imagesOne align-left">
-                    <img src="assets/BlogDesign1.png" alt="Aperçu du blog design 1"class="lightbox-trigger" role="button" tabindex="0" aria-describedby="proj1-img1-desc" loading="lazy" />
-                    <figcaption id="proj1-img1-desc">Capture d’écran du layout principal du blog</figcaption>
+                    <img src="assets/Tool1.png" alt="Aperçu du site Tooll frontend 1"class="lightbox-trigger" role="button" tabindex="0" aria-describedby="proj1-img1-desc" loading="lazy" />
+                    <figcaption id="proj1-img1-desc">Capture d’écran d'une partie de mon site d'outils</figcaption>
                 </figure>
 
                 <aside class="desc-header align-left" aria-labelledby="proj1-header-title">
                     <h3 id="proj1-header-title">Projet 1</h3>
-                    <p>Brève présentation du concept et des objectifs.</p>
+                    <p>Mon site d'outil Front End à utiliser sans modération.</p>
+                    <p>J'ai décider de créer ce site afin d'avoir tout a porter de mains plus joliement qu'avec les favoris du navigateur</p>
+                    <p>Son amélioration est toujours en cours, son accessibilité, ses fonctionnalitées, la liste des outils mise à jour et la sécurité entre autre.</p>
+                    <p>Dans ses prochaines évolution j'y ajouterai des petits penses-bêtes et d'autre fonctionnalité pour en faire un outils pour tous mes projets.</p>
                 </aside>
 
                 <aside class="desc-detail" aria-labelledby="proj1-detail-title">
-                    <h4 id="proj1-detail-title" class="visually-hidden"> Détails du projet 1</h4>
-                    <p>Description plus approfondie : technos utilisées, architecture, défis relevés, etc.</p>
+                    <h4 id="proj1-detail-title" class="visually-hidden"> Détails du projet 4</h4>
+                    <p>Ce projets est pour l'instant en vanilla, à l'aide des langages HTML, CSS et JavaScript.</p>
+                    <p>Il repose sur une architecture de Grid et Flexbox ainsi que des unités relatives.</p>
+                    <p>Amélioration à venir :</p>
+                    <p>
+                        <code>
+                            > Amélioration des alignements de texte et de l'accessibilité<br>
+                            > Responsivité et fluidité du design<br>
+                            > Validation du formulaire<br>
+                            > Création d'une base de données pour stocker les messages<br>
+                            > Optimisation du code et amélioration pour le SEO<br>
+                            > Convertion du formats des images en webp<br>
+                            > Sécurisation des données
+                        </code>
+                    </p>
                 </aside>
 
                 <figure class="project-imagesTwo align-left">
-                    <img src="assets/BlogDesign2.png" alt="Deuxième capture du projet 1" class="lightbox-trigger" role="button" tabindex="0" aria-describedby="proj1-img2-desc" loading="lazy" />
-                    <figcaption id="proj1-img2-desc">Aperçu de l’interface du formulaire de contact</figcaption>
+                    <img src="assets/Tool2.png" alt="Deuxième capture du projet 1" class="lightbox-trigger" role="button" tabindex="0" aria-describedby="proj1-img2-desc" loading="lazy" />
+                    <figcaption id="proj1-img2-desc">Aperçu d'une autre capture d’écran de mon site d'outils</figcaption>
                 </figure>
             </div>
         </section>
@@ -269,23 +284,38 @@
             <div class="side"></div>
             <div class="container-principale">
                 <figure class="project-imagesOne align-left">
-                    <img src="assets/MinimalistDesign.png" alt="Aperçu du design minimalist 1"class="lightbox-trigger" role="button" tabindex="0" aria-describedby="proj1-img1-desc" loading="lazy" />
-                    <figcaption id="proj2-img1-desc">Capture d’écran du design minimalist</figcaption>
+                    <img src="assets/BlogDesign1.png" alt="Aperçu du blog design 1"class="lightbox-trigger" role="button" tabindex="0" aria-describedby="proj2-img1-desc" loading="lazy" />
+                    <figcaption id="proj2-img1-desc">Capture d’écran du layout principal du blog</figcaption>
                 </figure>
 
                 <aside class="desc-header align-left" aria-labelledby="proj2-header-title">
                     <h3 id="proj2-header-title">Projet 2</h3>
-                    <p>Brève présentation du concept et des objectifs.</p>
+                    <p>Ce blog me sert de recueil de cours et surtout de penses-bêtes, plus simple que des documents word pour toutes les informations que j'ai apprise et noter à ma façon.</p>
+                    <p class="paraph-space">Principalement coder en HTML, CSS et JavaScript</p>
+                    <p>Ce site repose sur une architecture assez simple à l'aide de grid et de flexbox et la plupart de ses unités sont relatives.</p>
+                    <p class="paraph-space"><i>Ce site n'est pas déployé</i></p>
                 </aside>
 
                 <aside class="desc-detail" aria-labelledby="proj2-detail-title">
                     <h4 id="proj2-detail-title" class="visually-hidden"> Détails du projet 2</h4>
-                    <p>Description plus approfondie : technos utilisées, architecture, défis relevés, etc.</p>
+                    <p>Ce site comporte essentiellement beaucoup de texte, le but sera donc de minifier le code.</p>
+                    <p>Et de convertir le CSS en SCSS,</p>
+                    <p>Tout en prenant le temps d'améliorer le style général du site !</p>
+                    <p>Quelque amélioration son prévu nottament : </p>
+                    <p>
+                        <code>
+                        > L'optimisation au vue de la quantité d'information qui vas y être stocké<br>
+                        > Modifier certains alignements pour une meilleur adaptibilité au format mobile<br>
+                        > Des améliorations au niveau de l'accessibilité (clavier, vocal)<br>
+                        > La réalisation complète de la partie Back-End surtout côté base de données<br>
+                        > Et bien sûr l'ajout de toujours plus de cours<br>
+                        </code>
+                    </p>
                 </aside>
 
                 <figure class="project-imagesTwo align-left">
-                    <img src="assets/MinimalistDesign2.png" alt="Deuxième capture du projet 2" class="lightbox-trigger" role="button" tabindex="0" aria-describedby="proj1-img2-desc" loading="lazy" />
-                    <figcaption id="proj2-img2-desc">Aperçu de l’interface du design minimalist</figcaption>
+                    <img src="assets/BlogDesign2.png" alt="Deuxième capture du projet 2" class="lightbox-trigger" role="button" tabindex="0" aria-describedby="proj2-img2-desc" loading="lazy" />
+                    <figcaption id="proj2-img2-desc">Aperçu de l’interface d'un sommaire du blog</figcaption>
                 </figure>
             </div>
         </section>
@@ -297,17 +327,19 @@
             <div class="container-principale">
                 <figure class="project-imagesOne align-left">
                     <img src="assets/Fruity2.png" alt="Aperçu du site Fruity 1"class="lightbox-trigger" role="button" tabindex="0" aria-describedby="proj1-img1-desc" loading="lazy" />
-                    <figcaption id="proj3-img1-desc">Capture d’écran du layout principal du blog</figcaption>
+                    <figcaption id="proj3-img1-desc">Capture d’écran d'une section du site</figcaption>
                 </figure>
 
                 <aside class="desc-header align-left" aria-labelledby="proj3-header-title">
                     <h3 id="proj3-header-title">Projet 3</h3>
-                    <p>Brève présentation du concept et des objectifs.</p>
+                    <p>Ce design est inspiré de dribble, <i>malheureusement il est impossible de déterminer qui est son créateur car celui-ci a été publier par de nombreuse personnes et bien sûr dérivé</i>.</p>
+                    <p>A termes ce projet sera améliorer nottament avec l'ajout d'objet 3D et d'animation</p>
                 </aside>
 
                 <aside class="desc-detail" aria-labelledby="proj3-detail-title">
                     <h4 id="proj3-detail-title" class="visually-hidden"> Détails du projet 3</h4>
-                    <p>Description plus approfondie : technos utilisées, architecture, défis relevés, etc.</p>
+                    <p>Ce site a été l'une de mes premières expérimentations avec un slider en JS</p>
+                    <p></p>
                 </aside>
 
                 <figure class="project-imagesTwo align-left">
@@ -323,13 +355,13 @@
             <div class="side"></div>
             <div class="container-principale">
                 <figure class="project-imagesOne align-left">
-                    <img src="assets/Tool1.png" alt="Aperçu du site Tooll frontend 1"class="lightbox-trigger" role="button" tabindex="0" aria-describedby="proj1-img1-desc" loading="lazy" />
-                    <figcaption id="proj4-img1-desc">Capture d’écran du layout principal du blog</figcaption>
+                    <img src="assets/MinimalistDesign.png" alt="Aperçu du design minimalist 1"class="lightbox-trigger" role="button" tabindex="0" aria-describedby="proj4-img1-desc" loading="lazy" />
+                    <figcaption id="proj4-img1-desc">Capture d’écran du design minimalist</figcaption>
                 </figure>
 
                 <aside class="desc-header align-left" aria-labelledby="proj4-header-title">
                     <h3 id="proj4-header-title">Projet 4</h3>
-                    <p>Mon site d'outil Front End à utiliser sans modération.</p>
+                    <p>Brève présentation du concept et des objectifs.</p>
                 </aside>
 
                 <aside class="desc-detail" aria-labelledby="proj4-detail-title">
@@ -338,11 +370,12 @@
                 </aside>
 
                 <figure class="project-imagesTwo align-left">
-                    <img src="assets/Tool2.png" alt="Deuxième capture du projet 4" class="lightbox-trigger" role="button" tabindex="0" aria-describedby="proj1-img2-desc" loading="lazy" />
-                    <figcaption id="proj4-img2-desc">Aperçu de l’interface du formulaire de contact</figcaption>
+                    <img src="assets/MinimalistDesign2.png" alt="Deuxième capture du projet 4" class="lightbox-trigger" role="button" tabindex="0" aria-describedby="proj4-img2-desc" loading="lazy" />
+                    <figcaption id="proj4-img2-desc">Aperçu de l’interface du design minimalist</figcaption>
                 </figure>
             </div>
         </section>
+
 
             <!-- PROJET 5 -->
         <section id="project5" class="project" aria-labelledby="project5-title">
