@@ -18,7 +18,7 @@
     <link rel="apple-touch-icon" sizes="180x180" href="assets/ico/apple-touch-icon.png">
     <link rel="manifest" href="assets/ico/site.webmanifest">
 
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <meta property="og:type" content="website">
@@ -44,7 +44,7 @@
         <h2 id="lightbox-title" class="visually-hidden">Prévisualisation</h2>
         <img src="" alt="" role="presentation" />
     </div>
-        <!-------- SIDEBAR ------------>
+    <!-------- SIDEBAR ------------>
         <header class="sidebar" role="banner">
             <nav class="nav-top" aria-label="Navigation principale">
                 <ul>
@@ -68,9 +68,9 @@
                 </ul>
             </nav>
             
-            <nav class="nav-bottom" aria-label="Contact rapide">
+            <div class="nav-bottom" aria-label="Contact rapide">
                 <a href="#contact">Contact</a>
-            </nav>
+            </div>
         </header>
 
     <!-------- MAIN ------------>    
@@ -80,7 +80,7 @@
             <div class="hero-content" role="region" aria-labelledby="hero-title">
                 <!-- Titre et Image positionné au centre de la view -->
                 <div class="hero-image" aria-hidden="true">
-                    <model-viewer id="heroModel" class="obj" src="assets/obj/Computer90s.glb" alt="Modèle 3D abstrait" camera-controls interaction-prompt="none" camera-orbit="0deg 75deg 0.21m" exposure="1.2"></model-viewer>
+                    <model-viewer id="heroModel" class="obj" src="assets/obj/Computer90s.glb" alt="Modèle 3D abstrait" camera-controls interaction-prompt="none" camera-orbit="0deg 75deg 0.21m"></model-viewer>
                 </div>
                 
                 <h1 id="hero-title" class="title">PORTFOLIO</h1>

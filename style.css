@@ -63,8 +63,6 @@ body {
     background-color: var(--bg-color);
     color: var(--text-color);
     font-family: var(--body-family);
-
-
 }
 /* SCROLLBAR */
 body::-webkit-scrollbar {
@@ -107,7 +105,7 @@ a, li {
         padding: .5em;
     }
     /* Focus style */
-    .hero-button:focus-visible,.social-link:focus-visible,
+    .hero-button:focus-visible, .social-link:focus-visible,
     .social-link:hover, .toc-list li a:focus-visible, .skills-list li a:focus-visible,
     .lightbox-trigger:focus-visible, .lightbox-close:focus-visible, .container-pdf a:focus-visible,
     .team-card:focus-visible, #contact .container-btn button[type="submit"]:focus-visible {
@@ -383,6 +381,7 @@ a, li {
                 justify-content: center;
                 width: 30px;
                 height: 30px;
+                padding: var(--spacing-small);
                 font-weight: bold;
                 text-decoration: none;
                 border-radius: 50%;
@@ -989,18 +988,10 @@ a, li {
             height: 100%;
         }
         .social-link {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        width: 30px;
-        height: 100%;
-        font-weight: bold;
-        text-decoration: none;
-        border-radius: 50%;
-        font-size: 0.8rem;
-        margin-top: 0;
-        margin-bottom: var(--spacing-xl);
-    }
+            padding: var(--spacing-m);
+            margin-top: 0;
+            margin-bottom: var(--spacing-xl);
+        }
             .social {
                 height: 100%;
                 width: 100%;
@@ -1062,13 +1053,30 @@ a, li {
                 padding: 0;
             }
 /* ========== PROJET ======== */
-    .project h3 {
-        font-size: var(--spacing-xl);
-        text-transform: uppercase;
-    }
-        .grid-cell {
-            justify-content: center;
+.project .container-principale {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1.7fr 1fr 2fr 1fr;
+    grid-template-areas:
+        "desc-imagesOne"
+        "project-imagesOne"
+        "desc-imagesTwo"
+        "project-imagesTwo";
+}
+    .project-imagesOne, .project-imagesTwo {
+        padding: 0;
+    }    
+        .project h3 {
+            font-size: var(--spacing-xl);
+            text-transform: uppercase;
         }
+            .grid-cell {
+                justify-content: center;
+            }
+/* ========== LIGHTBOX ======== */
+    #lightbox-overlay img {
+        max-width: 80vw;
+        height: auto;
+    }
 /* ========== EQUIPE ======== */
     .team-card {
         height: auto;
@@ -1107,6 +1115,11 @@ a, li {
             }
 /* ========== FOOTER ======== */     
     #contact .container-principale {
+        width: 100%;
         padding: var(--spacing-xl);
     }
+        #contact .toc-upper {
+            font-size: 2rem;
+        }
+
 }
