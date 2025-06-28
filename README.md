@@ -64,7 +64,7 @@ Fonctionnalités :
 
     > Section “Compétences” épurée
 
-    Galerie de 5 projets avec lightbox
+    > Galerie de 5 projets avec lightbox
 
     > Section “Formations” avec PDF viewer
 
@@ -207,13 +207,13 @@ Scripts JS :
 
 Organisation du projet :
 
-portfolio-lea/
- > ├─ assets/ ico, obj, team, images
- > ├─ styles.css (variables, layout, sections, media queries)
- > ├─ scripts.js (lightbox, nav active, validation…)
- > ├─ index.html
- > ├─ robots.txt
- > └─ README.md
+portfolio-lea/ <br> 
+├─ assets/ ico, obj, team, images <br>
+├─ styles.css (variables, layout, sections, media queries) <br>
+├─ scripts.js (lightbox, nav active, validation…) <br>
+├─ index.html <br>
+├─ robots.txt <br>
+└─ README.md <br>
 
 Accessibilité :
 
