@@ -1,5 +1,3 @@
-# robots.txt pour le portfolio de Buonomo Léa
-
 User-agent: *
 Disallow: /assets/
 Disallow: /documents/
