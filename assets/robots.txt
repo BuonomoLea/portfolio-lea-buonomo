@@ -1,0 +1,11 @@
+# robots.txt pour le portfolio de Buonomo Léa
+
+User-agent: *
+Disallow: /assets/
+Disallow: /documents/
+Disallow: /styles.css
+Disallow: /scripts.js
+Disallow: /README.md
+
+# Page d’accueil
+Allow: /index.html
