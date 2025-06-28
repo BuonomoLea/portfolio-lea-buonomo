@@ -28,15 +28,3 @@ lightbox.addEventListener('click', (e) => {
 // inputEmail.setAttribute('aria-invalid', 'true');
 // errEmailDiv.textContent = 'Veuillez saisir une adresse email valide.';
 // mettre à jour aria-invalid / textContent dynamiquement
-
-// heroModel
-// const model = document.getElementById('heroModel');
-// let angle = 0;
-
-// function rotateCamera() {
-//     angle += 0.003;
-//     model.cameraOrbit = `${angle}rad 75deg 2.5m`;
-//     requestAnimationFrame(rotateCamera);
-// }
-
-// rotateCamera();
