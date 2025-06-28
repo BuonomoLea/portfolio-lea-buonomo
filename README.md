@@ -44,9 +44,7 @@ Table des matières :
 
     Accessibilité
 
-    Licence
-
-    Contact
+    <!-- Contact -->
 
 Aperçu :
 
@@ -60,21 +58,21 @@ Fonctionnalités :
 
     Section Hero 3D interactive
 
-    Sommaire ancré en grille deux colonnes
+    Sommaire en grid
 
     Section “À propos” illustrée par objectifs
 
     Section “Compétences” épurée
 
-    Galerie de projets 2×2 avec lightbox
+    Galerie de 5 projets avec lightbox
 
     Section “Formations” avec PDF viewer
 
     Section “Mon équipe” en grille adaptative
 
-    Formulaire de contact stylé
+    Formulaire de contact
 
-    Responsive & mobile-first via media queries
+    Responsive
 
 Technologies utilisées :
 
@@ -124,13 +122,13 @@ Hero Section :
 
     Titre “PORTFOLIO” positionné en absolute, responsive (clamp(6rem,10vw,10rem))
 
-    Modèle 3D centré <model-viewer>, filtré et mis à l’échelle
+    Modèle 3D centré <model-viewer>, filtré et mis à l’échelle (à optimiser)
 
 Sommaire (TOC) :
 
     Flex-col pour .table-of-contents
 
-    Grille 2 colonnes pour .toc-grid
+    Grille de 2 colonnes pour .toc-grid
 
     Titre split .toc-upper & .toc-bold, repères visuels ligne par ligne
 
@@ -148,7 +146,7 @@ Compétences (#skills) :
 
 Projets (.project) :
 
-    Grille 2×2 alternant images & descriptions
+    Grille de 2×2 alternant images & descriptions
 
     Effet zoom léger au hover sur vignettes
 
@@ -162,7 +160,7 @@ Projets (.project) :
 
 Formations (#formations) :
 
-    Grille 50 % / 50 % pour colonnes gauche (titre, paragraphe, PDF) et droite
+    Grille de 50 % / 50 % pour colonnes gauche (titre, paragraphe, PDF) et droite
 
     Preview PDF stylée, alignements en flex
 
@@ -209,16 +207,18 @@ Scripts JS :
         Validation de formulaire accessible : gestion de aria-invalid et messages d’erreur dynamiques
 
 
-Organisation du projet
+Organisation du projet :
+
 portfolio-lea/
-├─ assets/ ico, obj, team
+├─ assets/ ico, obj, team, images
 ├─ styles.css (variables, layout, sections, media queries)
 ├─ scripts.js (lightbox, nav active, validation…)
 ├─ index.html
-├─ LICENSE Licence MIT
-└─ README.md Documentation
+├─ robots.txt
+└─ README.md
 
-Accessibilité
+Accessibilité :
+
     Skip-link pour navigation clavier
 
     Roles & labels ARIA sur lightbox, nav & images
