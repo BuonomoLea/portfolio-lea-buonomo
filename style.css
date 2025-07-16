@@ -664,8 +664,8 @@ a, li {
     }
 #lightbox-close {
     position: absolute;
-    top: 2rem;
-    right: 2rem;
+    top: 3rem;
+    right: 3rem;
     font-size: 2rem;
     background: none;
     border: none;
@@ -925,7 +925,7 @@ a, li {
 /* ================================================
    MEDIA QUERIES – Version Mobile (iPhone 12 et moins)
 ================================================= */
-@media (max-width: 768px) {
+@media (max-width: 800px) {
     /* ===== SIDEBAR ===== */
     .sidebar {
         position: fixed;
@@ -992,9 +992,12 @@ a, li {
     /* ===== ABSOLUTE - FIN ===== */
     .hero-content {
         grid:
-            "hero-left" 40%
-            "hero-right" 60% / 1fr;
+            "hero-left" 30%
+            "hero-right" 70% / 1fr;
     }
+        .hero-paragraphe {
+            padding: 0 var(--spacing-xl) var(--spacing-paraph) 0;
+        }
         .hero-left {
             padding: 25% 10% 0 15%;
         }
@@ -1058,6 +1061,9 @@ a, li {
         .about-left .paragraphe {
             padding-right: 0;
         }
+            .about-left .paragraphe:first-of-type {
+                margin-top: var(--spacing-m);
+            }
         .parah-bottom {
             padding: var(--spacing-xl) 0;
         }
