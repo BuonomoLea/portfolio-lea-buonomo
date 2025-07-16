@@ -1,6 +1,6 @@
 User-agent: *
 Disallow: /assets/
-Disallow: /documents/
+Disallow: /docs/
 Disallow: /styles.css
 Disallow: /scripts.js
 Disallow: /README.md
