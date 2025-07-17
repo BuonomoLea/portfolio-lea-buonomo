@@ -135,7 +135,6 @@ a, li {
 #hero, #sommaire, #about, #skills, #project1, #project2, #project3, #project4, #project5, #formations, #team, #contact {
     position: relative;
     display: grid;
-    /* grid-template-columns: 10% 90%; */
     grid-template-columns: 15% 85%;
     height: min-content;
     overflow: hidden;
@@ -154,7 +153,7 @@ a, li {
     grid:
         "sidebar container-principale" 1fr
         / 10% 90%;
-    height: 100%;
+    height: min-content;
 }
     .side {
         grid-area: sidebar;
@@ -569,7 +568,7 @@ a, li {
             top: 0;
             left: 50%;
             width: var(--dot-border-width);
-            height: 300%;
+            height: 350%;
             background-color: var(--primary);
             z-index: -2;
         }
@@ -922,10 +921,12 @@ a, li {
         color: var(--bg-color);
     }
 
-/* ================================================
-   MEDIA QUERIES – Version Mobile (iPhone 12 et moins)
-================================================= */
-@media (max-width: 800px) {
+/* ========================
+   MEDIA QUERIES
+========================= */
+
+/* Mobile base Portrait */
+@media (orientation: portrait) {
     /* ===== SIDEBAR ===== */
     .sidebar {
         position: fixed;
@@ -968,7 +969,7 @@ a, li {
         display: flex;
         padding: 0;
         width: 100%;
-        height: auto;
+        height: min-content;
         flex-direction: column;
         align-items: stretch;
         justify-content: flex-start;
@@ -1118,6 +1119,7 @@ a, li {
             "formations-right" 60%;
     }  
         .formations-left {
+            height: min-content;
             grid:
                 "toc-title" 15%
                 "paragraphe" 65%
@@ -1149,7 +1151,8 @@ a, li {
         }
 
 }
-@media (max-width: 850px) and (orientation: landscape) {
+/* Grand mobile Landscape */
+@media (orientation: landscape) and (min-width: 701px) and (max-width: 900px) {
     .sidebar {
         width: min-content;
         padding: var(--spacing-m) var(--spacing-s);
@@ -1263,4 +1266,220 @@ a, li {
         display: flex;
         justify-content: center;
     }
+}
+/* Petit mobile Landscape */
+@media (orientation: landscape) and (max-width: 700px) {
+    /* LIGHTBOX */
+        #lightbox-overlay img {
+            max-width: 80vw;
+            height: auto;
+        }
+        #lightbox-overlay.active {
+            align-items: center;
+            justify-content: center;
+            padding-top: 10%;
+        }
+        #lightbox-close {
+            top: 20%;
+            right: 2rem;
+        }
+    /* section */
+    #hero, #sommaire, #about, #skills, #project1, #project2, #project3, #project4, #project5, #formations, #team, #contact {
+        position: relative;
+        display: grid;
+        grid-template-columns: auto;
+        grid-template-rows: 15% 85%;
+        height: min-content;
+        overflow: hidden;
+    }
+    /* nav */
+    .sidebar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: min-content;
+        border-right: none;
+        border-bottom: 3px solid var(--primary);
+        padding: var(--spacing-m);
+        display: grid;
+        grid: "nav-top nav-bottom" / 70% 30%;
+        grid-template-areas: "nav-top nav-bottom";
+        align-items: center;
+        justify-items: center;
+        overflow: hidden;
+        z-index: 9999;
+    }
+            .nav-top, .nav-bottom {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            align-items: center;
+            box-sizing: content-box;
+            height: 100%;
+            width: 100%;
+            text-align: left;
+        }
+            .nav-top ul {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                width: 100%;
+            }
+        .nav-mid {
+            display: none;
+        }
+    /* section hero */
+    .hero-content {
+        grid:
+            "hero-left" 65%
+            "hero-right" 35% / 1fr;
+        height: min-content;
+    }
+    .hero-left {
+        padding: 15%;
+        height: auto;
+    }
+    .hero-right {
+        padding: 5% 15%;
+        height: auto;
+        display: flex;
+        justify-content: flex-start;
+        flex-direction: column;
+    }
+    .hero-right .hero-button {
+        display: none;
+    }
+    /* index */
+    .table-of-contents, #skills .container-principale {
+        height: min-content;
+        padding: 5%;
+    }
+    .toc-list li {
+        font-size: var(--spacing-m);
+        white-space: nowrap;
+    }
+    /* a propos */
+    #about .container-principale {
+        grid-template-columns: 40% 60%;
+    }
+        .about-left {
+            padding: 0 5% 0 10%
+        }
+            .about-left .toc-upper {
+                font-size: 2rem;
+            }
+            .about-left .toc-bold  {
+                font-size: clamp(5rem, 15vw, 5rem);
+            }
+            .about-left .paragraphe {
+                padding-right: var(--spacing-s);
+            }
+                .about-left .paragraphe p {
+                    padding-top: var(--spacing-paraph);
+                }
+        .about-right {
+            padding: 0 10% 5% 0%;
+        }
+            .number::after {
+                height: 450%;
+            }
+
+    /*  PROJET */
+    .project .container-principale {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto auto;
+        grid-template-areas:
+        "desc-imagesOne"
+        "project-imagesOne"
+        "desc-imagesTwo"
+        "project-imagesTwo";
+        height: min-content;
+    }
+        .project-imagesOne, .project-imagesTwo {
+            padding: 5% 0;
+        }
+        .project aside {
+            padding: 5% 0;
+        }
+            .project h3 {
+                font-size: var(--spacing-xl);
+                text-transform: uppercase;
+            }
+                .grid-cell {
+                    justify-content: center;
+                }
+
+    #formations .container-principale {
+        display: grid;
+        grid: "formations-left formations-right" 1fr / 40% 60%;
+    }
+                .formations-left {
+                grid:
+                    "toc-title" 10%
+                    "paragraphe" 60%
+                    "container-pdf" 30%;
+            }
+                #formations .toc-upper {
+                    font-size: 2rem;
+                }
+                #formations .toc-bold {
+                    font-size: clamp(2rem, 5vw, 4rem);
+                }
+                .formations-left .paragraphe {
+                    display: flex;
+                    align-items: flex-start;
+                    flex-direction: column;
+                    justify-content: flex-start;
+                    padding-right: var(--spacing-paraph);
+                }
+                .formations-left .parah-top, .formations-left .parah-bottom {
+                    padding-right: var(--spacing-paraph);
+                    
+                }
+                .formations-left .parah-top p, .formations-left .parah-bottom p {
+                    padding-top: var(--spacing-m);
+                }
+                .container-pdf {
+                    display: flex;
+                    align-items: center;
+                    flex-direction: column;
+                    text-align: center;
+                    justify-content: flex-end;
+                    padding: var(--spacing-xxl) 0 0 0;
+                }
+                .pdf-content {
+                    flex-grow: 0;
+                }
+                     .align-right {
+                        text-align: left;
+                    }
+                    #formations .parah-bottom {
+                        padding: var(--spacing-xl) var(--spacing-xl) 0 0;
+                    }
+            .formations-right .number::after {
+                height: 500%;
+            }
+            .formations-right .text p {
+                font-size: .8rem;
+            }
+
+    #team .container-principale {
+        padding: 10%;
+    }
+    #contact .hero-button {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+}
+/* Tablette et petit pc */
+@media (orientation: landscape) and (min-width: 901px) and (max-width: 1200px) {
+
+}
+/* Ordinateur portable et grand PC */
+@media (min-width: 1201px) {
+
 }
