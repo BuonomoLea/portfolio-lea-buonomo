@@ -112,34 +112,37 @@ form.addEventListener('submit', function(event) {
         formStatus.textContent = '';
         return;
     }
-    // Prepare form data
     const formData = new FormData(form);
+ 
     fetch(form.action, {
         method: 'POST',
-        body: formData,
         headers: {
             'Accept': 'application/json'
-        }
+        },
+        body: formData
     })
-    .then(response => response.json().catch(() => response))
-    .then(data => {
-        if ((data && data.ok) || (data && data.success) || (data && data.status === 'success') || (data && data instanceof Response && data.status === 200)) {
+    .then(async response => {
+        let data;
+        try {
+            data = await response.json();
+        } catch {
+            data = {};
+        }
+        if (response.ok) {
             formStatus.textContent = 'Votre message a bien été envoyé !';
-            fieldIds.forEach(id => {
-                document.getElementById(id).value = '';
-                updateFieldValidation(id);
-            });
             form.reset();
+            fieldIds.forEach(id => updateFieldValidation(id));
+        } else if (data && data.errors && Array.isArray(data.errors)) {
+            formStatus.textContent = data.errors.map(e => e.message).join(' ');
         } else {
             formStatus.textContent = 'Une erreur est survenue, veuillez réessayer.';
         }
     })
     .catch(() => {
-        formStatus.textContent = 'Une erreur est survenue, veuillez réessayer.';
+        formStatus.textContent = 'Impossible de joindre le serveur.';
     });
 });
 
-// --- ScrollSpy nav dot highlighting ---
 
 // --- Enhanced ScrollSpy nav dot highlighting ---
 const navDotLinks = document.querySelectorAll('.nav-mid a.dot');
