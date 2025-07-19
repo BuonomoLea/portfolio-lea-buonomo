@@ -1,133 +1,4 @@
-/* ======================================================
-   VARIABLES ET RESET
-====================================================== */
-:root {
-    --primary: #2E0EF1;
-    --bg-color: #f8f4e3;
-    --text-color: #000000;
-
-    /* Tailles */
-    --dot-size: 1.25rem;
-    --dot-border-width: .125rem;
-    --spacing-small: .2rem;
-    --spacing-s: .5rem;
-    --spacing-m: 1rem;    
-    --spacing-paraph: 1.5rem;
-    --spacing-xl: 2rem;
-    --spacing-xxl: 4rem;
-
-    --sb-size: 14px;
-
-    /* Polices */
-    --subtitle-family: var( --subtitle-family);
-    --body-family: Arial, Helvetica, sans-serif;
-    --compressed: scaleY(.7);
-
-    /* Others */
-    --opa: .5;
-}
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    /* -webkit-user-select: none;
-    user-select: none; */
-}
-html {
-    scroll-behavior: smooth;
-}
-    @media (prefers-reduced-motion: reduce) {
-        html { scroll-behavior: auto; }
-        *, *::before, *::after, #lightbox-overlay, #lightbox-overlay img, #lightbox-close,
-        #formations, #formations .container-pdf, #formations .pdf-content p {
-            animation-duration: 0s !important;
-            transition-duration: 0s !important;
-        }
-        .hero-button, .hero-button::after, .title, .hero-image, #contact .container-form input
-        #contact .container-form textarea, #contact .container-btn button  {
-            transition: none !important;
-        }
-        .team-card,
-        .team-card:hover {
-            transition: none !important;
-            transform: none !important;
-        }
-    }
-html, body {
-    scroll-behavior: smooth;
-    overflow-x: hidden;
-}
-body {
-    width: 100%;
-    height: max-content;
-    position: relative;
-    background-color: var(--bg-color);
-    color: var(--text-color);
-    font-family: var(--body-family);
-}
-/* SCROLLBAR */
-body::-webkit-scrollbar {
-  width: var(--sb-size)
-}
-body::-webkit-scrollbar-track {
-  background: var(--bg-color);
-  border-radius: 3px;
-}
-body::-webkit-scrollbar-thumb {
-  background: var(--primary);
-  border-radius: 3px;
-  
-}
-@supports not selector(::-webkit-scrollbar) {
-  body {
-    scrollbar-color: var(--primary)
-                     var(--bg-color);
-  }
-}
-
-h1,h2,h3,h4,h5,h6 {
-    color: var(--primary);
-}
-button, label, .hero-button, .subtitle, .pdf-content p {
-    color: var(--primary);
-}
-a, li {
-    text-decoration: none;
-    color: var(--primary);
-    list-style: none;
-}
-    .skip-link {
-        position: absolute;
-        top: -9999px; left: -9999px;
-    }
-    .skip-link:focus {
-        position: static;
-        background: #000; color: #fff;
-        padding: .5em;
-    }
-    /* Focus style */
-    .hero-button:focus-visible, .social-link:focus-visible,
-    .social-link:hover, .toc-list li a:focus-visible, .skills-list li a:focus-visible,
-    .lightbox-trigger:focus-visible, .lightbox-close:focus-visible, .container-pdf a:focus-visible,
-    .team-card:focus-visible, #contact .container-btn button[type="submit"]:focus-visible {
-        outline: 3px solid var(--primary);
-        outline-offset: 2px;
-    }
-    .container-form input:focus-visible, .container-form textarea:focus-visible {
-        border-color: var(--primary);
-        outline: 3px solid var(--primary);
-        outline-offset: 2px;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    }
-
-    .visually-hidden {
-        position: absolute;
-        width: 1px; height: 1px;
-        margin: -1px; padding: 0;
-        clip: rect(0 0 0 0);
-        overflow: hidden;
-        white-space: nowrap;
-    }
+/* Minified CSS: Variables, Reset, and Accessibility */:root{--primary:#2E0EF1;--bg-color:#f8f4e3;--text-color:#000;--dot-size:1.25rem;--dot-border-width:.125rem;--spacing-small:.2rem;--spacing-s:.5rem;--spacing-m:1rem;--spacing-paraph:1.5rem;--spacing-xl:2rem;--spacing-xxl:4rem;--sb-size:12px;--subtitle-family:var(--subtitle-family);--body-family:Arial,Helvetica,sans-serif;--compressed:scaleY(.7);--opa:.5;}*{margin:0;padding:0;box-sizing:border-box;}html{scroll-behavior:smooth;}@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto;}*,*::before,*::after,#lightbox-overlay,#lightbox-overlay img,#lightbox-close,#formations,#formations .container-pdf,#formations .pdf-content p{animation-duration:0s!important;transition-duration:0s!important;}.hero-button,.hero-button::after,.title,.hero-image,#contact .container-form input,#contact .container-form textarea,#contact .container-btn button{transition:none!important;}.team-card,.team-card:hover{transition:none!important;transform:none!important;}}html,body{scroll-behavior:smooth;overflow-x:hidden;}body{width:100%;height:max-content;position:relative;background:var(--bg-color);color:var(--text-color);font-family:var(--body-family);}body::-webkit-scrollbar{width:var(--sb-size)}body::-webkit-scrollbar-track{background:var(--bg-color);border-radius:3px;}body::-webkit-scrollbar-thumb{background:var(--primary);border-radius:3px;}@supports not selector(::-webkit-scrollbar){body{scrollbar-color:var(--primary) var(--bg-color);}}h1,h2,h3,h4,h5,h6,button,label,.hero-button,.subtitle,.pdf-content p{color:var(--primary);}a,li{text-decoration:none;color:var(--primary);list-style:none;}.skip-link{position:absolute;top:-9999px;left:-9999px;}.skip-link:focus{position:static;background:#000;color:#fff;padding:.5em;}.hero-button:focus-visible,.social-link:focus-visible,.social-link:hover,.toc-list li a:focus-visible,.skills-list li a:focus-visible,.lightbox-trigger:focus-visible,.lightbox-close:focus-visible,.container-pdf a:focus-visible,.team-card:focus-visible,#contact .container-btn button[type="submit"]:focus-visible{outline:3px solid var(--primary);outline-offset:2px;}.container-form input:focus-visible,.container-form textarea:focus-visible{border-color:var(--primary);outline:3px solid var(--primary);outline-offset:2px;box-shadow:0 4px 10px rgba(0,0,0,.1);}.visually-hidden{position:absolute;width:1px;height:1px;margin:-1px;padding:0;clip:rect(0 0 0 0);overflow:hidden;white-space:nowrap;}
 
 /* ================================================
     SECTION GLOBAL
@@ -167,8 +38,10 @@ a, li {
     img {
         opacity: var(--opa);
     }
-/* Scroll des sections si besoin  */
 
+.npt {
+    display:none;
+}
 
 /* ================================================
    SIDEBAR
@@ -240,9 +113,10 @@ a, li {
                 /* text-indent: -9999px; */
                 transition: background-color .2s linear;
             }
-            .nav-mid a.dot:hover {
+            .nav-mid a.dot:hover, .nav-mid a.dot.active {
                 background-color: var(--primary);
             }
+
             /* TOOLTIPS */
                 .nav-mid a.dot::before {
                     content: attr(aria-label);
@@ -279,9 +153,7 @@ a, li {
             .nav-mid a.dot-end::after {
                 height: 100%;
             }
-            .nav-mid a.dot.active {
-                background-color: var(--primary);
-            } 
+
     .nav-bottom {
         display: flex;
         justify-content: center;
@@ -315,7 +187,8 @@ a, li {
     text-align: center;
 }
     .hero-image {
-        top: 50%;
+        top: 70%;
+        left: 40%;
         transform: translateX(-50%) translateY(-50%);        
         width: 35%;
         height: 50%;
@@ -323,21 +196,15 @@ a, li {
         border-radius: 8px;
         z-index: 9999;
     }
+    .hero-image img {
+        opacity: .07;
+    }
     #heroModel {
         width: 100%;
         height: 100%;
         background: transparent;
         display: block;
         filter: brightness(1.1) hue-rotate(55deg);
-    }
-    #heroModel model-viewer {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        border-radius: 50%;
-        transform: scale(5);
     }
     .title {
         position: absolute;
@@ -620,6 +487,7 @@ a, li {
     display: block;
     height: auto;
     transition: transform .2s linear;
+    padding: var(--spacing-s) 0;
 }
 .project-imagesOne img:hover, .project-imagesTwo img:hover {
     transform: scale(1.06);
@@ -633,13 +501,18 @@ a, li {
     figcaption, aside p {
         padding-top: var(--spacing-m);
     }
+    .desc-detail {
+        padding: 0 var(--spacing-paraph) var(--spacing-s) 0;
+    }
 /* ================================================
    PROJET - Lightbox
 ================================================= */
 #lightbox-overlay {
     position: fixed;
     inset: 0;
-    background-color: rgba(0, 0, 0, 0.85);
+    background-color: rgba(0, 0, 0, 0.6);
+    -webkit-backdrop-filter: blur(4px);
+    backdrop-filter: blur(4px);
     display: none;
     align-items: center;
     justify-content: center;
@@ -647,11 +520,12 @@ a, li {
     animation: fadeIn 0.3s ease-in-out;
 }
 #lightbox-overlay.active {
-  display: flex;
+    display: flex;
+    padding-left: var(--spacing-xxl);
 }
     #lightbox-overlay img {
-        max-width: 60vw;
-        max-height: 60vh;
+        max-width: 80vw;
+        height: auto;
         object-fit: contain;
         border-radius: 8px;
         box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
@@ -997,7 +871,7 @@ a, li {
             "hero-right" 70% / 1fr;
     }
         .hero-paragraphe {
-            padding: 0 var(--spacing-xl) var(--spacing-paraph) 0;
+            padding: 0 var(--spacing-xxl) var(--spacing-paraph) 0;
         }
         .hero-left {
             padding: 25% 10% 0 15%;
@@ -1100,9 +974,16 @@ a, li {
                 justify-content: center;
             }
 /* ========== LIGHTBOX ======== */
+    #lightbox-close {
+        top: 15%;
+        right: var(--spacing-paraph);
+    }
     #lightbox-overlay img {
-        max-width: 80vw;
+        max-width: 85vw;
         height: auto;
+    }
+    #lightbox-overlay.active {
+        padding-left: 0;
     }
 /* ========== EQUIPE ======== */
     .team-card {
@@ -1153,6 +1034,9 @@ a, li {
 }
 /* Grand mobile Landscape */
 @media (orientation: landscape) and (min-width: 701px) and (max-width: 900px) {
+    .hero-left, .hero-right, .table-of-contents, #skills .container-principale {
+        height: min-content;
+    }
     .sidebar {
         width: min-content;
         padding: var(--spacing-m) var(--spacing-s);
@@ -1168,7 +1052,6 @@ a, li {
         }
         .hero-left {
             padding: 40% 15% 0% 15%;
-            height: min-content;
         }
             .social {
                 display: flex;
@@ -1178,7 +1061,6 @@ a, li {
             }
         .hero-right {
             padding: 40% 15% 0% 0%;
-            height: min-content;
         }
             .social-right {
                 align-items: flex-end;
@@ -1191,7 +1073,6 @@ a, li {
                 }
 
         .table-of-contents, #skills .container-principale {
-            height: min-content;
             padding: 5%;
         }
             .toc-grid {
@@ -1266,9 +1147,20 @@ a, li {
         display: flex;
         justify-content: center;
     }
+       
+    /* LIGHTBOX */
+    #lightbox-overlay.active {
+        align-items: center;
+        justify-content: center;
+        padding-top: 10%;
+        padding-left: 0;
+    }
 }
 /* Petit mobile Landscape */
 @media (orientation: landscape) and (max-width: 700px) {
+    .project .container-principale, .hero-content, .table-of-contents, #skills .container-principale, .hero-content, .sidebar, #hero, #sommaire, #about, #skills, #project1, #project2, #project3, #project4, #project5, #formations, #team, #contact {
+        height: min-content;
+    }
     /* LIGHTBOX */
         #lightbox-overlay img {
             max-width: 80vw;
@@ -1278,6 +1170,7 @@ a, li {
             align-items: center;
             justify-content: center;
             padding-top: 10%;
+            padding-left: 0;
         }
         #lightbox-close {
             top: 20%;
@@ -1289,7 +1182,6 @@ a, li {
         display: grid;
         grid-template-columns: auto;
         grid-template-rows: 15% 85%;
-        height: min-content;
         overflow: hidden;
     }
     /* nav */
@@ -1298,7 +1190,6 @@ a, li {
         top: 0;
         left: 0;
         width: 100%;
-        height: min-content;
         border-right: none;
         border-bottom: 3px solid var(--primary);
         padding: var(--spacing-m);
@@ -1335,7 +1226,6 @@ a, li {
         grid:
             "hero-left" 65%
             "hero-right" 35% / 1fr;
-        height: min-content;
     }
     .hero-left {
         padding: 15%;
@@ -1353,7 +1243,6 @@ a, li {
     }
     /* index */
     .table-of-contents, #skills .container-principale {
-        height: min-content;
         padding: 5%;
     }
     .toc-list li {
@@ -1395,7 +1284,6 @@ a, li {
         "project-imagesOne"
         "desc-imagesTwo"
         "project-imagesTwo";
-        height: min-content;
     }
         .project-imagesOne, .project-imagesTwo {
             padding: 5% 0;
@@ -1475,6 +1363,8 @@ a, li {
     }
 
 }
+
+
 /* Tablette et petit pc */
 @media (orientation: landscape) and (min-width: 901px) and (max-width: 1200px) {
 

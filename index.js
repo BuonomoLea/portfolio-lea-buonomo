@@ -18,13 +18,162 @@ lightbox.addEventListener('click', (e) => {
 });
 
 // A FAIRE : ----------------------------------------------------------------
-// aria-current="page" : injecter/trier dynamiquement ce code uniquement sur le lien qui pointe vers la section visible.
-// ajouter dynamiquement aria-current="page" sur <a href="#about"…>
-// aucun aria-current sur nav-mid tant que l’on n’est pas entré dans #about.
-// Une fois que #about devient la section “actuelle” (au scroll ou quand on clique)
-// veiller à retirer aria-current de l’ancien lien avant de le placer sur le nouveau.
 
-// AJOUTER LA VALIDATION DU FORMULAIRE COMME :
-// inputEmail.setAttribute('aria-invalid', 'true');
-// errEmailDiv.textContent = 'Veuillez saisir une adresse email valide.';
-// mettre à jour aria-invalid / textContent dynamiquement
+// --- Navigation highlighting with aria-current ---
+const navLinks = document.querySelectorAll('.nav-mid a.dot');
+const sectionIds = Array.from(navLinks).map(link => link.getAttribute('href').replace('#', ''));
+const sections = sectionIds.map(id => document.getElementById(id)).filter(Boolean);
+
+function getActiveSection() {
+    let activeId = null;
+    const offset = window.innerHeight * 0.3;
+    for (const section of sections) {
+        const rect = section.getBoundingClientRect();
+        if (rect.top <= offset && rect.bottom > offset) {
+            activeId = section.id;
+            break;
+        }
+    }
+    return activeId;
+}
+
+function updateAriaCurrent() {
+    const activeId = getActiveSection();
+    navLinks.forEach(link => {
+        if (link.hasAttribute('aria-current')) {
+            link.removeAttribute('aria-current');
+        }
+        if (activeId && link.getAttribute('href') === `#${activeId}`) {
+            link.setAttribute('aria-current', 'page');
+        }
+    });
+}
+
+window.addEventListener('scroll', updateAriaCurrent);
+window.addEventListener('resize', updateAriaCurrent);
+navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+        setTimeout(updateAriaCurrent, 100);
+    });
+});
+document.addEventListener('DOMContentLoaded', updateAriaCurrent);
+
+
+// --- Accessible form validation for all fields ---
+const form = document.getElementById('contact-form');
+const formStatus = document.getElementById('form-status');
+const fieldIds = ['name', 'email', 'message'];
+const errorMessages = {
+    name: 'Veuillez saisir un nom valide (lettres, espaces, tirets ou apostrophes uniquement).',
+    email: 'Veuillez entrer une adresse email valide.',
+    message: 'Le message ne peut pas être vide.'
+};
+function validateField(id, value) {
+    switch (id) {
+        case 'name': {
+            const nameRegex = /^[\p{L} '-]+$/u;
+            return nameRegex.test(value.trim());
+        }
+        case 'email':
+            return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
+        case 'message':
+            return value.trim() !== '';
+        default:
+            return true;
+    }
+}
+function updateFieldValidation(id) {
+    const input = document.getElementById(id);
+    const errDiv = document.getElementById(`err-${id}`);
+    const valid = validateField(id, input.value);
+    if (!valid) {
+        input.setAttribute('aria-invalid', 'true');
+        errDiv.textContent = errorMessages[id];
+    } else {
+        input.removeAttribute('aria-invalid');
+        errDiv.textContent = '';
+    }
+    return valid;
+}
+fieldIds.forEach(id => {
+    const input = document.getElementById(id);
+    input.addEventListener('input', () => updateFieldValidation(id));
+    input.addEventListener('blur', () => updateFieldValidation(id));
+});
+form.addEventListener('submit', function(event) {
+    event.preventDefault();
+    formStatus.textContent = '';
+    let allValid = true;
+    fieldIds.forEach(id => {
+        const valid = updateFieldValidation(id);
+        if (!valid) allValid = false;
+    });
+    if (!allValid) {
+        formStatus.textContent = '';
+        return;
+    }
+    // Prepare form data
+    const formData = new FormData(form);
+    fetch(form.action, {
+        method: 'POST',
+        body: formData,
+        headers: {
+            'Accept': 'application/json'
+        }
+    })
+    .then(response => response.json().catch(() => response))
+    .then(data => {
+        if ((data && data.ok) || (data && data.success) || (data && data.status === 'success') || (data && data instanceof Response && data.status === 200)) {
+            formStatus.textContent = 'Votre message a bien été envoyé !';
+            fieldIds.forEach(id => {
+                document.getElementById(id).value = '';
+                updateFieldValidation(id);
+            });
+            form.reset();
+        } else {
+            formStatus.textContent = 'Une erreur est survenue, veuillez réessayer.';
+        }
+    })
+    .catch(() => {
+        formStatus.textContent = 'Une erreur est survenue, veuillez réessayer.';
+    });
+});
+
+// --- ScrollSpy nav dot highlighting ---
+
+// --- Enhanced ScrollSpy nav dot highlighting ---
+const navDotLinks = document.querySelectorAll('.nav-mid a.dot');
+const allSections = Array.from(document.querySelectorAll('section'));
+const contactFooter = document.getElementById('contact');
+if (contactFooter) {
+    allSections.push(contactFooter);
+}
+
+function setActiveDotForSection(sectionId) {
+    const targetLink = document.querySelector(`.nav-mid a[href="#${sectionId}"]`);
+    navDotLinks.forEach(link => link.classList.remove('active'));
+    if (targetLink) {
+        targetLink.classList.add('active');
+    }
+}
+
+const spyObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            navDotLinks.forEach(link => link.classList.remove('active'));
+            const sectionId = entry.target.id;
+            if (sectionId !== 'contact') {
+                const targetLink = document.querySelector(`.nav-mid a[href="#${sectionId}"]`);
+                if (targetLink) {
+                    targetLink.classList.add('active');
+                }
+            }
+            // If sectionId === 'contact', leave all dots inactive
+        }
+    });
+}, {
+    root: null,
+    threshold: 0.5
+});
+
+allSections.forEach(section => spyObserver.observe(section));

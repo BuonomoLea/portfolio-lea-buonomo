@@ -7,36 +7,45 @@
     <meta name="theme-color" content="#f8f4e3">
     <meta name="robots" content="index,follow">
 
-    <title>Portfolio • Léa Buonomo • Développeuse web</title>
-    <meta name="description" content="Découvrez le portfolio de Léa Buonomo, développeuse web spécialisée en HTML/CSS avancé, JavaScript et accessibilité.">
+    <title>Portfolio Léa Buonomo – Développeuse web à Strasbourg | Projets, Compétences, Formation</title>
 
-    <!-- Multilang
-    <link rel="canonical" href="https://site.com/">
+    <meta name="description" content="Portfolio de Léa Buonomo, développeuse web à Strasbourg : projets HTML5, CSS, JavaScript, accessibilité, SEO, UI/UX, Node.js, MongoDB, et plus. Découvrez ses compétences, réalisations et parcours.">
+    <meta name="keywords" content="Portfolio, Léa Buonomo, Développeuse web, Strasbourg, HTML5, CSS3, JavaScript, Accessibilité, SEO, UI/UX, Node.js, MongoDB, Projets, Formation, Full Stack, Front End, Back End, Web Design, Blog, ACNH, Fruity, Minimalist Design">
+    <meta name="author" content="Léa Buonomo">
+
+    <!-- Multilang pour plus tard
     <link rel="alternate" hreflang="en" href="https://site.com/en/">   Pour la version en anglais -->
 
     <link rel="icon" href="assets/ico/favicon.ico" type="image/x-icon">
     <link rel="apple-touch-icon" sizes="180x180" href="assets/ico/apple-touch-icon.png">
     <link rel="manifest" href="assets/ico/site.webmanifest">
 
-    <!-- <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
+    <!-- Open Graph -->
+    <meta property="og:title" content="Portfolio Léa Buonomo – Développeuse web à Strasbourg">
+    <meta property="og:description" content="Découvrez les projets, compétences et parcours de Léa Buonomo, développeuse web spécialisée en HTML, CSS, JavaScript, accessibilité et SEO.">
+    <meta property="og:image" content="https://buonomolea.github.io/BUONOMO_Lea_Portfolio_2025_FR/preview.png">
+    <meta property="og:url" content="https://buonomolea.github.io/BUONOMO_Lea_Portfolio_2025_FR/">
     <meta property="og:type" content="website">
-    <meta property="og:locale" content="fr_FR">
-    <meta property="og:url" content="https://ton-site.com/">
-    <meta property="og:title" content="Portfolio • Léa Buonomo">
-    <meta property="og:description" content="Découvrez mes projets, compétences et mon parcours en développement web accessible.">
-    <meta property="og:image" content="https://ton-site.com/og-image.png">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Portfolio Léa Buonomo – Développeuse web à Strasbourg">
+    <meta name="twitter:description" content="Découvrez les projets, compétences et parcours de Léa Buonomo, développeuse web spécialisée en HTML, CSS, JavaScript, accessibilité et SEO.">
+    <meta name="twitter:image" content="https://buonomolea.github.io/BUONOMO_Lea_Portfolio_2025_FR/preview.png">
 
     <link rel="stylesheet" href="style.css" />
-
-    <!-- <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script> -->
-
     <script src="index.js" defer></script>
 </head>
 <body>
     <!-- SKIP TO CONTENT - WCAG -->
     <a class="skip-link" href="#main">Aller au contenu principal</a>
+    <noscript>
+        <div class="noscript-warning" style="background:#fff3cd;color:#856404;padding:1em;text-align:center;">
+            Ce site nécessite JavaScript pour une expérience optimale. Veuillez l'activer dans votre navigateur.
+        </div>
+    </noscript>
 
     <!-------- LIGHTBOX ------------>
     <div id="lightbox-overlay" role="dialog" aria-modal="true" aria-labelledby="lightbox-title" aria-hidden="true" tabindex="-1">
@@ -69,7 +78,7 @@
             </nav>
             
             <div class="nav-bottom" aria-label="Contact rapide">
-                <a href="#contact">Contact</a>
+                <a href="#contactId">Contact</a>
             </div>
         </header>
 
@@ -80,7 +89,7 @@
             <div class="hero-content" role="region" aria-labelledby="hero-title">
                 <!-- Titre et Image positionné au centre de la view -->
                 <div class="hero-image" aria-hidden="true">
-                    <!-- <model-viewer id="heroModel" class="obj" src="assets/obj/Computer90s.glb" alt="Modèle 3D abstrait" camera-controls interaction-prompt="none" camera-orbit="0deg 75deg 0.21m"></model-viewer> -->
+                    <img src="assets/ico/apple-touch-icon.png" alt="Logo Portfolio Léa Buonomo" width="200" height="200" loading="lazy" />
                 </div>
                 
                 <h1 id="hero-title" class="title">PORTFOLIO</h1>
@@ -244,7 +253,7 @@
             <div class="side"></div>
             <div class="container-principale">
                 <figure class="project-imagesOne align-left">
-                    <img src="assets/projets/Tool1.webp" alt="Aperçu du site Tooll frontend 1"class="lightbox-trigger" role="button" tabindex="0" aria-describedby="proj1-img1-desc" loading="lazy" />
+                    <img src="assets/projets/Tool1.webp" alt="Capture d’écran du site d’outils Front End de Léa Buonomo" class="lightbox-trigger" role="button" tabindex="0" aria-describedby="proj1-img1-desc" loading="lazy" />
                     <figcaption id="proj1-img1-desc">Capture d’écran d'une partie de mon site d'outils</figcaption>
                 </figure>
 
@@ -275,7 +284,7 @@
                 </aside>
 
                 <figure class="project-imagesTwo align-left">
-                    <img src="assets/projets/Tool2.webp" alt="Deuxième capture du projet 1" class="lightbox-trigger" role="button" tabindex="0" aria-describedby="proj1-img2-desc" loading="lazy" />
+                    <img src="assets/projets/Tool2.webp" alt="Deuxième capture d’écran du site d’outils Front End de Léa Buonomo" class="lightbox-trigger" role="button" tabindex="0" aria-describedby="proj1-img2-desc" loading="lazy" />
                     <figcaption id="proj1-img2-desc">Aperçu d'une autre capture d’écran de mon site d'outils</figcaption>
                 </figure>
             </div>
@@ -287,7 +296,7 @@
             <div class="side"></div>
             <div class="container-principale">
                 <figure class="project-imagesOne align-left">
-                    <img src="assets/projets/BlogDesign1.webp" alt="Aperçu du blog design 1"class="lightbox-trigger" role="button" tabindex="0" aria-describedby="proj2-img1-desc" loading="lazy" />
+                    <img src="assets/projets/BlogDesign1.webp" alt="Capture d’écran du blog design 1 de Léa Buonomo" class="lightbox-trigger" role="button" tabindex="0" aria-describedby="proj2-img1-desc" loading="lazy" />
                     <figcaption id="proj2-img1-desc">Capture d’écran du layout principal du blog</figcaption>
                 </figure>
 
@@ -303,7 +312,8 @@
                     <h4 id="proj2-detail-title" class="visually-hidden"> Détails du projet 2</h4>
                     <p>Comportant essentiellement beaucoup de texte, le but est de minifier le code html au maximum.</p>
                     <p>De de convertir le CSS en SCSS,</p>
-                    <p>Ainsi que prendre le temps d'améliorer le style général du site !</p>
+                    <p>De formater le code à l'aide de prettier,</p>
+                    <p>Ainsi que prendre le temps d'améliorer le design général du site !</p>
                     <p>Quelque amélioration son prévu nottament : </p>
                     <p>
                         <code>
@@ -311,13 +321,14 @@
                         > Modifier certains alignements pour une meilleure lecture<br>
                         > Des améliorations au niveau de l'accessibilité (clavier, vocal)<br>
                         > La réalisation complète de la partie Back-End surtout côté base de données<br>
-                        > Et bien sûr l'ajout de toujours plus de cours et penses-bêtes<br>
+                        > Vérifier mes éventuelles fautes de frappes et de français<br>
+                        > Et bien sûr l'ajout de toujours plus de cours et penses-bêtes
                         </code>
                     </p>
                 </aside>
 
                 <figure class="project-imagesTwo align-left">
-                    <img src="assets/projets/BlogDesign2.webp" alt="Deuxième capture du projet 2" class="lightbox-trigger" role="button" tabindex="0" aria-describedby="proj2-img2-desc" loading="lazy" />
+                    <img src="assets/projets/BlogDesign2.webp" alt="Deuxième capture d’écran du blog design 1 de Léa Buonomo" class="lightbox-trigger" role="button" tabindex="0" aria-describedby="proj2-img2-desc" loading="lazy" />
                     <figcaption id="proj2-img2-desc">Aperçu de l’interface d'un sommaire du blog</figcaption>
                 </figure>
             </div>
@@ -329,24 +340,35 @@
             <div class="side"></div>
             <div class="container-principale">
                 <figure class="project-imagesOne align-left">
-                    <img src="assets/projets/Fruity2.webp" alt="Aperçu du site Fruity 1"class="lightbox-trigger" role="button" tabindex="0" aria-describedby="proj1-img1-desc" loading="lazy" />
+                    <img src="assets/projets/Fruity2.webp" alt="Capture d’écran du site Fruity, projet design de Léa Buonomo" class="lightbox-trigger" role="button" tabindex="0" aria-describedby="proj3-img1-desc" loading="lazy" />
                     <figcaption id="proj3-img1-desc">Capture d’écran d'une section du site</figcaption>
                 </figure>
 
                 <aside class="desc-header align-left" aria-labelledby="proj3-header-title">
                     <h3 id="proj3-header-title">Projet 3</h3>
-                    <p>Ce design est inspiré de dribble, <i>malheureusement il est impossible de déterminer qui est son créateur car celui-ci a été publier par de nombreuse personnes et bien sûr dérivé</i>.</p>
-                    <p>A termes ce projet sera améliorer nottament avec l'ajout d'objet 3D et d'animation</p>
+                    <p>Ce design est inspiré de dribble, <i>malheureusement il m'est impossible de déterminer qui en est le créateur car celui-ci a été publier par de nombreuse personnes et bien sûr dérivé</i>.</p>
+                    <p><i>A termes ce projet ne sera pas améliorer</i></p>
+                    <p>Le but était avant tout de reproduire un design et d'y apporter des améliorations</p>
+                    <p>J'ai nottament reproduit quelques pages de l'application Instagram au format mobile ainsi que prime video et soundcloud à titre d'entraînement</p>
                 </aside>
 
                 <aside class="desc-detail" aria-labelledby="proj3-detail-title">
                     <h4 id="proj3-detail-title" class="visually-hidden"> Détails du projet 3</h4>
-                    <p>Ce site a été l'une de mes premières expérimentations avec un slider en JS</p>
-                    <p></p>
+                    <p>Ce site a été l'une de mes premières expérimentations avec un slider en JS sans framework</p>
+                    <p>Réaliser des clones à partir de design me permet de gagner du temps pour apprendre de nouvelles méthodes et prendre ce temps pour pratiquer ce qui m'est le plus nécessaire</p>
+                    <p>C'est également l'un des design que j'ai préféré réaliser</p>
+                    <p>Le minimalisme et les coloris harmonieux sont d'après moi une base intéressante pour une UX fluide</p>
+                    <p>
+                        Je n'ai pas déployé ce projet, mais vous pouvez accéder au code source sur GitHub en suivant
+                        <a href="https://github.com/BuonomoLea/Fruity" target="_blank" rel="noopener noreferrer" aria-label="Accéder au code source sur GitHub, s’ouvre dans un nouvel onglet">
+                            ce lien
+                        </a>
+                    </p>
+
                 </aside>
 
                 <figure class="project-imagesTwo align-left">
-                    <img src="assets/projets/Fruity4.webp" alt="Deuxième capture du projet 3" class="lightbox-trigger" role="button" tabindex="0" aria-describedby="proj1-img2-desc" loading="lazy" />
+                    <img src="assets/projets/Fruity4.webp" alt="Deuxième capture d’écran du site Fruity, projet design de Léa Buonomo" class="lightbox-trigger" role="button" tabindex="0" aria-describedby="proj3-img2-desc" loading="lazy" />
                     <figcaption id="proj3-img2-desc">Aperçu de l’interface du formulaire de contact</figcaption>
                 </figure>
             </div>
@@ -358,35 +380,40 @@
             <div class="side"></div>
             <div class="container-principale">
                 <figure class="project-imagesOne align-left">
-                    <img src="assets/projets/ACNH-présentation-arborescence.webp" alt="Aperçu de l'arborescence modulaire du guide ACNH"class="lightbox-trigger" role="button" tabindex="0" aria-describedby="proj4-img1-desc" loading="lazy" />
+                    <img src="assets/projets/ACNH-présentation-arborescence.webp" alt="Capture d’écran de l’arborescence modulaire du guide ACNH de Léa Buonomo" class="lightbox-trigger" role="button" tabindex="0" aria-describedby="proj4-img1-desc" loading="lazy" />
                     <figcaption id="proj4-img1-desc">Capture d’écran de l'HTML et de l'arborescence modulaire de mon guide ACNH</figcaption>
                 </figure>
 
                 <aside class="desc-header align-left" aria-labelledby="proj4-header-title">
                     <h3 id="proj4-header-title">Projet 4</h3>
-                    <p>ACNH Guide est une application perso pour suivre ma complétion à 100 % dans Animal Crossing New Horizons</p>
-                    <p>Principalement codée en HTML5, CSS3 (Grid, Flexbox, variables) et JavaScript (modules, fetch, async/await), elle repose sur des composants HTML réutilisables, des JSON statiques et le stockage local</p>
+                    <p>Mon ACNH Guide est une application personnel pour suivre ma complétion à 100 % dans Animal Crossing New Horizons</p>
+                    <p>J'apprecie finir finir les choses que je commence avec une bonne organisation donc ce projet m'est très utile en plus d'être un excellent entraînement</p>
+                    <p>Principalement codée en HTML5, CSS3 (Grid, Flexbox, variables) et JavaScript (modules, fetch, async/await)</p>
+                    <p>Reposant sur des composants HTML réutilisables, des JSON statiques et le stockage local</p>
                 </aside>
 
                 <aside class="desc-detail" aria-labelledby="proj4-detail-title">
                     <h4 id="proj4-detail-title" class="visually-hidden"> Détails du projet 4</h4>
                     <p>Ce projet vise un code léger et modulaire à l'aide des web components</p>
-                    <p>Amélioration prévu : </p>
+                    <p>De cette façon j'ai pu revoir Fetch de manière plus approfondie</p>
+                    <p>Améliorations prévues : </p>
                     <p>
                         <code>
-                        > Réalisé le design final du site<br>
-                        > Minifier le code<br>
-                        > Convertir le CSS en SCSS<br>
+                        > Réalisé le design final du site qui n'est que structurelle pour l'instant<br>
+                        > Minifier le code<br> 
+                        > voir si des améliorations peuvent être apporter à l'organisations de l'arborescence<br>
+                        > Convertir le CSS en SCSS
                         > L'accessibilité<br>
                         > Améliorer les performances<br>
+                        > Améliorer la maintenabilité<br>
                         </code>
                     </p>
-                    <p></p>
+                    <p>A termes je compte créer ma propre bibliothèque UI pour ce type de projet</p>
                     <p></p>
                 </aside>
 
                 <figure class="project-imagesTwo align-left">
-                    <img src="assets/projets/Guide-perso-ACNH-en-cours.webp" alt="Deuxième capture du projet 4" class="lightbox-trigger" role="button" tabindex="0" aria-describedby="proj4-img2-desc" loading="lazy" />
+                    <img src="assets/projets/Guide-perso-ACNH-en-cours.webp" alt="Deuxième capture d’écran du dashboard du guide ACNH de Léa Buonomo" class="lightbox-trigger" role="button" tabindex="0" aria-describedby="proj4-img2-desc" loading="lazy" />
                     <figcaption id="proj4-img2-desc">Aperçu de l’interface du dashboard (style en cours de développement)</figcaption>
                 </figure>
             </div>
@@ -398,7 +425,7 @@
             <div class="side"></div>
             <div class="container-principale">
                  <figure class="project-imagesOne align-left">
-                    <img src="assets/projets/MinimalistDesign.webp" alt="Aperçu du blog design 1"class="lightbox-trigger" role="button" tabindex="0" aria-describedby="proj1-img1-desc" loading="lazy" />
+                    <img src="assets/projets/MinimalistDesign.webp" alt="Capture d’écran du projet Minimalist Design de Léa Buonomo" class="lightbox-trigger" role="button" tabindex="0" aria-describedby="proj5-img1-desc" loading="lazy" />
                     <figcaption id="proj5-img1-desc">Capture d’écran du layout principal du blog</figcaption>
                 </figure>
 
@@ -413,7 +440,7 @@
                 </aside>
 
                 <figure class="project-imagesTwo align-left">
-                    <img src="assets/projets/MinimalistDesign2.webp" alt="Deuxième capture du projet 5" class="lightbox-trigger" role="button" tabindex="0" aria-describedby="proj1-img2-desc" loading="lazy" />
+                    <img src="assets/projets/MinimalistDesign2.webp" alt="Deuxième capture d’écran du projet Minimalist Design de Léa Buonomo" class="lightbox-trigger" role="button" tabindex="0" aria-describedby="proj5-img2-desc" loading="lazy" />
                     <figcaption id="proj5-img2-desc">Aperçu de l’interface du formulaire de contact</figcaption>
                 </figure>
             </div>
@@ -463,7 +490,7 @@
                         <div class="number number-one">01</div>
                         <div class="text">
                             <h3>Apprentissage UN</h3>
-                            <p>Amélioration en Frontend :</p>
+                            <p>Amélioration en Frontend</p>
                             <p>Mise en œuvre de CSS personnalisé et avancé entre autres part l'utilisation de variables CSS et pseudo-classes pour améliorer l’interactivité et la cohérence graphique.</p>
                             <p>Intégration de systèmes de mise en page modernes avec Flexbox, Grid et les unités relatives, permettant une structure fluide et adaptable.</p>
                             <p>Création d'interfaces responsives et réalisation de quelques projets avec Bootstrap.</p>
@@ -474,7 +501,7 @@
                         <div class="number number-two">02</div>
                         <div class="text">
                             <h3>Apprentissage DEUX</h3>
-                            <p>Renforcement de mes compétences en JavaScript :</p>
+                            <p>Renforcement de mes compétences en JavaScript</p>
                             <p>Programmation asynchrone via l’utilisation d’APIs, pour récupérer et afficher des données en temps réel avec Fetch API et JSON.</p>
                             <p>Implenter mes web components</p>
                             <p>Quelques problèmes rencontrés au niveau de la rigueure syntaxique.</p>
@@ -484,7 +511,7 @@
                         <div class="number">03</div>
                         <div class="text">
                             <h3>Apprentissage TROIS</h3>
-                            <p>Initiation au développement back-end :</p>
+                            <p>Initiation au développement back-end</p>
                             <p>Node.js et Express, en créant des serveurs simples capables de gérer des routes, requêtes HTTP et réponses dynamiques.</p>
                             <p>Manipulation de données via des fichiers JSON et bases MongoDB, pour arpenter la logique CRUD et découverte de SQL.</p>
                         </div>
@@ -550,7 +577,7 @@
     <!-- PAGE DE CONTACT -->
     <footer id="contact" class="contact" role="contentinfo" aria-labelledby="contact-title">
         <div class="side"></div>
-        <div class="container-principale">
+        <div id="contactId" class="container-principale">
             <h2 id="contact-title">
                 <!-- <span class="toc-bold">contactez</span>
                 <span class="toc-upper">- moi</span><br> -->
@@ -558,7 +585,12 @@
                 <span class="toc-upper">contact_Me()</span><br>
             </h2>
             <!-- novalidate sur le formulaire si on gères la validation en JS -->
-            <form action="#" method="POST" novalidate>
+            <form id="contact-form" action="https://formspree.io/f/mwpqvpob" method="POST" data-sf-captcha="true" novalidate>
+                  <input class="npt" type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-label="npt"/>
+
+                    <!-- sujet personnalisé pour l’e-mail reçu -->
+                    <input type="hidden" name="_subject" value="Contact depuis le portfolio"/>
+                
                 <div class="container-form">
                     <label for="name">Nom</label>
                     <input type="text" id="name" name="name" required aria-invalid="false" aria-describedby="err-name" />
@@ -584,6 +616,7 @@
                         <!-- message d’erreur injecté dynamiquement ici -->
                     </div>  
                 </div>
+                <div id="form-status" aria-live="polite" role="status" class="form-status"></div>
                 <div class="container-btn">
                     <button type="submit" class="hero-button">Envoyer</button>                
                 </div>
