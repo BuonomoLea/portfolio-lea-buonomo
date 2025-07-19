@@ -100,47 +100,30 @@ fieldIds.forEach(id => {
     input.addEventListener('input', () => updateFieldValidation(id));
     input.addEventListener('blur', () => updateFieldValidation(id));
 });
-form.addEventListener('submit', function(event) {
-    event.preventDefault();
-    formStatus.textContent = '';
-    let allValid = true;
-    fieldIds.forEach(id => {
-        const valid = updateFieldValidation(id);
-        if (!valid) allValid = false;
-    });
-    if (!allValid) {
-        formStatus.textContent = '';
-        return;
-    }
-    const formData = new FormData(form);
- 
-    fetch(form.action, {
-        method: 'POST',
-        headers: {
-            'Accept': 'application/json'
-        },
-        body: formData
-    })
-    .then(async response => {
-        let data;
-        try {
-            data = await response.json();
-        } catch {
-            data = {};
-        }
-        if (response.ok) {
+
+// Add _next input for Formspree redirect
+if (!form.querySelector('input[name="_next"]')) {
+    const nextInput = document.createElement('input');
+    nextInput.type = 'hidden';
+    nextInput.name = '_next';
+    nextInput.value = window.location.pathname + '?sent=1#contact';
+    form.appendChild(nextInput);
+}
+
+// On DOMContentLoaded, show success message if redirected
+document.addEventListener('DOMContentLoaded', function() {
+    const params = new URLSearchParams(window.location.search);
+    if (params.get('sent') === '1') {
+        const formStatus = document.getElementById('form-status');
+        if (formStatus) {
             formStatus.textContent = 'Votre message a bien été envoyé !';
-            form.reset();
-            fieldIds.forEach(id => updateFieldValidation(id));
-        } else if (data && data.errors && Array.isArray(data.errors)) {
-            formStatus.textContent = data.errors.map(e => e.message).join(' ');
-        } else {
-            formStatus.textContent = 'Une erreur est survenue, veuillez réessayer.';
         }
-    })
-    .catch(() => {
-        formStatus.textContent = 'Impossible de joindre le serveur.';
-    });
+        // Remove ?sent=1 from URL without reloading
+        params.delete('sent');
+        const newSearch = params.toString();
+        const newUrl = window.location.pathname + (newSearch ? '?' + newSearch : '') + window.location.hash;
+        window.history.replaceState({}, '', newUrl);
+    }
 });
 
 
