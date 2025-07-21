@@ -20,7 +20,7 @@ Un site vitrine accessible et responsive, conçu pour présenter mes projets, me
 ## Live demo
 
 Visitez la version en ligne via ce lien :  
-[![Live Demo](https://img.shields.io/badge/Live_Demo-Open-2E0EF1)](https://buonomolea.github.io/BUONOMO_Lea_Portfolio_2025_FR/)
+[![Live Demo](https://img.shields.io/badge/Live_Demo-Open-2E0EF1)](https://buonomolea.github.io/portfolio-lea-buonomo/)
 
 ---
 
