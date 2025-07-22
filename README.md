@@ -1,4 +1,4 @@
-# Portfolio de Buonomo Léa
+# Portfolio de Léa Buonomo
 
 Un site vitrine accessible et responsive, conçu pour présenter mes projets, mes compétences et mon parcours.
 
@@ -125,4 +125,5 @@ Cependant je vous recommande la version live démo
 - LinkedIn :  https://www.linkedin.com/in/l%C3%A9a-b-179849208/
 - Email : leabuonomo@hotmail.fr
   
-Merci pour votre visite !  
+Merci pour votre visite !
+Buonomo Léa
