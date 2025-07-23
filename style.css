@@ -906,6 +906,9 @@
                 height: 100%;
                 width: 100%;
             }
+            .fa-2xl {
+                font-size: var(--spacing-xl);
+            } 
         .hero-right {
             padding: 5% 15% 0 15%;
         }            
@@ -1202,6 +1205,7 @@
         top: 0;
         left: 0;
         width: 100%;
+        max-height: 18vh;
         border-right: none;
         border-bottom: 3px solid var(--primary);
         padding: var(--spacing-m);
@@ -1252,6 +1256,9 @@
     }
     .hero-right .hero-button {
         display: none;
+    }
+    .title {
+        top: 18vh;
     }
     /* index */
     .table-of-contents, #skills .container-principale {
