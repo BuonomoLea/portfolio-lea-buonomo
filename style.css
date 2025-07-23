@@ -1389,12 +1389,6 @@
     }
 
 }
-
-
-/* Tablette et petit pc Landscape */
-@media (orientation: landscape) and (min-width: 901px) and (max-width: 1200px) {
-
-}
 /* Tablette et petit pc Portrait */
 @media (orientation: portrait) and (min-height: 960px) {
     .hero-left {
@@ -1410,6 +1404,12 @@
         padding: var(--spacing-xl);
     }
 }
+
+/* Tablette et petit pc Landscape */
+@media (orientation: landscape) and (min-width: 901px) and (max-width: 1200px) {
+
+}
+
 /* Ordinateur portable et grand PC */
 @media (min-width: 1201px) {
 
