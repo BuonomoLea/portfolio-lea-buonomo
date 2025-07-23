@@ -89,6 +89,7 @@ Scrollbar : styles WebKit + fallback avec `scrollbar-color: var(--primary) var(-
 
 - Optimisation continue
 - Modification ou ajout de projet
+- Ajustement pour le format Ipad
 
 ---
 
