@@ -3,7 +3,6 @@ Disallow: /assets/
 Disallow: /docs/
 Disallow: /styles.css
 Disallow: /scripts.js
-Disallow: /README.md
 
 # Page d’accueil
 Allow: /index.html

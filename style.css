@@ -613,7 +613,7 @@
         padding-right: var(--spacing-m);
     }
     .parah-bottom {
-        padding-left: var(--spacing-xl);
+        padding-left: 0;
     }
     .align-right {
         text-align: right;
