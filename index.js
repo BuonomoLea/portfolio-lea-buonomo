@@ -9,7 +9,7 @@ document.querySelectorAll('.lightbox-trigger').forEach(img => {
     });
 });
 
-// Ferme en cliquant sur le fond ou le bouton
+// Fermer la lightbox en cliquant sur le fond ou le bouton
 lightbox.addEventListener('click', (e) => {
     if (e.target === lightbox || e.target === closeBtn) {
         lightbox.classList.remove('active');
@@ -17,9 +17,7 @@ lightbox.addEventListener('click', (e) => {
     }
 });
 
-// A FAIRE : ----------------------------------------------------------------
-
-// --- Navigation highlighting with aria-current ---
+// Navigation avec aria-current
 const navLinks = document.querySelectorAll('.nav-mid a.dot');
 const sectionIds = Array.from(navLinks).map(link => link.getAttribute('href').replace('#', ''));
 const sections = sectionIds.map(id => document.getElementById(id)).filter(Boolean);
@@ -59,7 +57,7 @@ navLinks.forEach(link => {
 document.addEventListener('DOMContentLoaded', updateAriaCurrent);
 
 
-// --- Accessible form validation for all fields ---
+// Formulaire validation
 const form = document.getElementById('contact-form');
 const formStatus = document.getElementById('form-status');
 const fieldIds = ['name', 'email', 'message'];
@@ -101,7 +99,7 @@ fieldIds.forEach(id => {
     input.addEventListener('blur', () => updateFieldValidation(id));
 });
 
-// Add _next input for Formspree redirect
+// Input pour Formspree
 if (!form.querySelector('input[name="_next"]')) {
     const nextInput = document.createElement('input');
     nextInput.type = 'hidden';
@@ -110,7 +108,7 @@ if (!form.querySelector('input[name="_next"]')) {
     form.appendChild(nextInput);
 }
 
-// On DOMContentLoaded, show success message if redirected
+// Success message
 document.addEventListener('DOMContentLoaded', function() {
     const params = new URLSearchParams(window.location.search);
     if (params.get('sent') === '1') {
@@ -127,7 +125,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
-// --- Enhanced ScrollSpy nav dot highlighting ---
+// ScrollSpy pour les nav dot
 const navDotLinks = document.querySelectorAll('.nav-mid a.dot');
 const allSections = Array.from(document.querySelectorAll('section'));
 const contactFooter = document.getElementById('contact');
@@ -163,3 +161,20 @@ const spyObserver = new IntersectionObserver((entries) => {
 });
 
 allSections.forEach(section => spyObserver.observe(section));
+
+// Fonction de partage du portfolio
+function sharePortfolio() {
+    if (navigator.share) {
+      navigator.share({
+        title: 'Buonomo Léa Portfolio',
+        text: 'Découvre ce profil ici :',
+        url: window.location.href
+      })
+      .then(() => console.log('Partage réussi !'))
+      .catch(error => console.log('Erreur de partage :', error));
+    } else {
+      alert("Le partage n’est pas supporté sur ce navigateur.");
+    }
+  }
+
+document.getElementById('shareBtn').addEventListener('click', sharePortfolio);

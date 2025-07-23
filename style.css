@@ -734,6 +734,7 @@
 ================================================= */
 #contact {
     padding: 5%;
+    position: relative;
 }
 #contact .container-principale {
     margin: 0 auto;
@@ -794,6 +795,13 @@
 
     #contact .container-btn button[type="submit"]:hover {
         color: var(--bg-color);
+    }
+    .share-btn {
+        cursor: pointer;
+        position: absolute;
+        bottom: 4vh;
+        left: 12vw;
+        width: min-content;
     }
 
 /* ========================
