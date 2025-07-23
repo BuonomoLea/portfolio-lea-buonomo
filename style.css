@@ -208,7 +208,7 @@
     }
     .title {
         position: absolute;
-        top: 15vh;
+        top: 5vh;
         white-space: nowrap;
         font-family: var(--title-family);
         transform: var(--compressed) translateX(-50%);
@@ -505,6 +505,9 @@
     .desc-detail {
         padding: 0 var(--spacing-paraph) var(--spacing-s) 0;
     }
+    aside p a {
+        font-weight: bold;
+    }
 /* ================================================
    PROJET - Lightbox
 ================================================= */
@@ -799,8 +802,8 @@
     .share-btn {
         cursor: pointer;
         position: absolute;
-        bottom: 4vh;
-        left: 12vw;
+        bottom: 5vh;
+        left: 11vw;
         width: min-content;
     }
 
@@ -883,7 +886,7 @@
             padding: 0 var(--spacing-xxl) var(--spacing-paraph) 0;
         }
         .hero-left {
-            padding: 25% 10% 0 15%;
+            padding: 30% 10% 0 15%;
         }
         .social-icons {
             padding-top: 0;
@@ -927,7 +930,7 @@
     }
 /* ========== COMPETENCES ======== */    
     #skills .toc-upper, #skills .toc-bold, #formations .toc-upper, #formations .toc-bold  {
-        font-size: var(--spacing-xl);
+        font-size: var(--spacing-paraph);
     }
     #skills .container-principale {
         padding: 10%;
