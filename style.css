@@ -209,9 +209,10 @@
     .title {
         position: absolute;
         top: 15vh;
+        white-space: nowrap;
         font-family: var(--title-family);
         transform: var(--compressed) translateX(-50%);
-        font-size: clamp(6rem, 10vw, 10rem);
+        font-size: clamp(4vw, 8vw, 10vw);
         letter-spacing: -2px;
         z-index: 3;
     }
@@ -857,7 +858,7 @@
     /* ===== ABSOLUTE ===== */
     .title {
         top: var(--spacing-m);
-        font-size: clamp(4rem, 2vw, 8rem);
+        font-size: clamp(8vw, 11vw, 15vw);
     }
     .hero-image {
         top: 30%;
