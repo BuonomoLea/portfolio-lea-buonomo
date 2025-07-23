@@ -810,7 +810,6 @@
 /* ========================
    MEDIA QUERIES
 ========================= */
-
 /* Mobile base Portrait */
 @media (orientation: portrait) {
     /* ===== SIDEBAR ===== */
@@ -823,6 +822,7 @@
         border-right: none;
         border-bottom: 3px solid var(--primary);
         padding: var(--spacing-m);
+        padding-left: var(--spacing-paraph);
         display: grid;
         grid: "nav-top nav-bottom" / 70% 30%;
         grid-template-areas: "nav-top nav-bottom";
@@ -1048,7 +1048,7 @@
 
 }
 /* Grand mobile Landscape */
-@media (orientation: landscape) and (min-width: 701px) and (max-width: 900px) {
+@media (orientation: landscape) and (min-width: 701px) and (max-width: 960px) {
     .hero-left, .hero-right, .table-of-contents, #skills .container-principale {
         height: min-content;
     }
@@ -1082,7 +1082,8 @@
             }
                 .hero-paragraphe {
                     margin: var(--spacing-paraph) 0;
-                }            
+                    padding-bottom: 0;
+                }       
                 .hero-button {
                     width: min-content;
                 }
@@ -1155,7 +1156,7 @@
                         padding: var(--spacing-xl) var(--spacing-xl) 0 0;
                     }
     #team .container-principale {
-        padding: 10%;
+        padding: 10% 10% 10% 18%;
     }
     #contact .hero-button {
         width: 100%;
@@ -1217,7 +1218,7 @@
         overflow: hidden;
         z-index: 9999;
     }
-            .nav-top, .nav-bottom {
+        .nav-top, .nav-bottom {
             display: flex;
             flex-direction: row;
             justify-content: space-evenly;
@@ -1236,6 +1237,12 @@
             }
         .nav-mid {
             display: none;
+        }
+        .nav-mid a.dot::after {
+            height: 200%;
+        }
+        .nav-mid a.dot-end::after {
+            height: 0%;
         }
     /* section hero */
     .hero-content {
@@ -1384,9 +1391,24 @@
 }
 
 
-/* Tablette et petit pc */
+/* Tablette et petit pc Landscape */
 @media (orientation: landscape) and (min-width: 901px) and (max-width: 1200px) {
 
+}
+/* Tablette et petit pc Portrait */
+@media (orientation: portrait) and (min-height: 960px) {
+    .hero-left {
+        padding: 25% 10% 0 15%;
+    }
+    .hero-right {
+        padding: 10% 15% 0 15%;
+    }
+    .project .container-principale {
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+    }
+    .team-grid {
+        padding: var(--spacing-xl);
+    }
 }
 /* Ordinateur portable et grand PC */
 @media (min-width: 1201px) {
