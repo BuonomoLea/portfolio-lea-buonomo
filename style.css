@@ -1,5 +1,9 @@
 /* Minified CSS: Variables, Reset, and Accessibility */:root{--primary:#2E0EF1;--bg-color:#f8f4e3;--text-color:#000;--dot-size:1.25rem;--dot-border-width:.125rem;--spacing-small:.2rem;--spacing-s:.5rem;--spacing-m:1rem;--spacing-paraph:1.5rem;--spacing-xl:2rem;--spacing-xxl:4rem;--sb-size:12px;--subtitle-family:var(--subtitle-family);--body-family:Arial,Helvetica,sans-serif;--compressed:scaleY(.7);--opa:.5;}*{margin:0;padding:0;box-sizing:border-box;}html{scroll-behavior:smooth;}@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto;}*,*::before,*::after,#lightbox-overlay,#lightbox-overlay img,#lightbox-close,#formations,#formations .container-pdf,#formations .pdf-content p{animation-duration:0s!important;transition-duration:0s!important;}.hero-button,.hero-button::after,.title,.hero-image,#contact .container-form input,#contact .container-form textarea,#contact .container-btn button{transition:none!important;}.team-card,.team-card:hover{transition:none!important;transform:none!important;}}html,body{scroll-behavior:smooth;overflow-x:hidden;}body{width:100%;height:max-content;position:relative;background:var(--bg-color);color:var(--text-color);font-family:var(--body-family);}body::-webkit-scrollbar{width:var(--sb-size)}body::-webkit-scrollbar-track{background:var(--bg-color);border-radius:3px;}body::-webkit-scrollbar-thumb{background:var(--primary);border-radius:3px;}@supports not selector(::-webkit-scrollbar){body{scrollbar-color:var(--primary) var(--bg-color);}}h1,h2,h3,h4,h5,h6,button,label,.hero-button,.subtitle,.pdf-content p{color:var(--primary);}a,li{text-decoration:none;color:var(--primary);list-style:none;}.skip-link{position:absolute;top:-9999px;left:-9999px;}.skip-link:focus{position:static;background:#000;color:#fff;padding:.5em;}.hero-button:focus-visible,.social-link:focus-visible,.social-link:hover,.toc-list li a:focus-visible,.skills-list li a:focus-visible,.lightbox-trigger:focus-visible,.lightbox-close:focus-visible,.container-pdf a:focus-visible,.team-card:focus-visible,#contact .container-btn button[type="submit"]:focus-visible{outline:3px solid var(--primary);outline-offset:2px;}.container-form input:focus-visible,.container-form textarea:focus-visible{border-color:var(--primary);outline:3px solid var(--primary);outline-offset:2px;box-shadow:0 4px 10px rgba(0,0,0,.1);}.visually-hidden{position:absolute;width:1px;height:1px;margin:-1px;padding:0;clip:rect(0 0 0 0);overflow:hidden;white-space:nowrap;}
 
+/* Ordinateur portable et grand PC
+@media (min-width: 1201px) {
+
+} */
 /* ================================================
     SECTION GLOBAL
 ================================================= */
@@ -811,7 +815,7 @@
    MEDIA QUERIES
 ========================= */
 /* Mobile base Portrait */
-@media (orientation: portrait) {
+@media (orientation: portrait) and (max-width: 759px) {
     /* ===== SIDEBAR ===== */
     .sidebar {
         position: fixed;
@@ -971,7 +975,7 @@
 /* ========== PROJET ======== */
 .project .container-principale {
     grid-template-columns: 1fr;
-    grid-template-rows: 1.7fr 1fr 2fr 1fr;
+    grid-template-rows: 1.2fr 1fr 1fr 1fr;
     grid-template-areas:
         "desc-imagesOne"
         "project-imagesOne"
@@ -1013,12 +1017,12 @@
         grid:
             "formations-left" 40%
             "formations-right" 60%;
-    }  
+    } 
         .formations-left {
             height: min-content;
             grid:
-                "toc-title" 15%
-                "paragraphe" 65%
+                "toc-title" 10%
+                "paragraphe" 70%
                 "container-pdf" 20%;
         }
         .formations-right {
@@ -1097,6 +1101,7 @@
 
         #about .container-principale {
             grid-template-columns: 40% 60%;
+            padding-left: var(--spacing-m);
         }
                 .about-left .paragraphe {
                     padding-right: 0;
@@ -1110,12 +1115,14 @@
         }
         
         .projet .container-principale {
-            grid:
-                "project-imagesOne desc-imagesOne" 35%
-                "desc-imagesTwo desc-imagesOne" 10%
-                "desc-imagesTwo project-imagesTwo" auto
-                / 50% 50%
-            }
+            grid-template-columns: 1fr;
+            grid-template-rows: 1.2fr 1fr 1fr 1fr;
+            grid-template-areas:
+                "desc-imagesOne"
+                "project-imagesOne"
+                "desc-imagesTwo"
+                "project-imagesTwo";
+        }
             .desc-detail {
                 padding-right: var(--spacing-s);
             }
@@ -1390,7 +1397,7 @@
 
 }
 /* Tablette et petit pc Portrait */
-@media (orientation: portrait) and (min-height: 960px) {
+@media (orientation: portrait) and (min-width: 760px) and (min-height: 960px) {
     .hero-left {
         padding: 25% 10% 0 15%;
     }
@@ -1405,12 +1412,8 @@
     }
 }
 
-/* Tablette et petit pc Landscape */
+/* Tablette et petit pc Landscape
 @media (orientation: landscape) and (min-width: 901px) and (max-width: 1200px) {
 
-}
+} */
 
-/* Ordinateur portable et grand PC */
-@media (min-width: 1201px) {
-
-}
