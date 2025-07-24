@@ -1,36 +1,41 @@
 # .github/workflows/sitemap.yml
 # yaml-language-server: $schema=https://json.schemastore.org/github-workflow.json
 
-permissions:
-  contents: write
-
 name: Génération automatique du sitemap
 
 on:
   push:
-    branches:
-      - main
+    branches: [ main ]
+
+permissions:
+  contents: write
 
 jobs:
   build-sitemap:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Récupérer le code
+      - name: Checkout du code
         uses: actions/checkout@v4.2.2
 
-      - name: Générer le sitemap
-        uses: cicirello/generate-sitemap@v1.10.2
+      - name: Installer Node.js
+        uses: actions/setup-node@v3
         with:
-          path-to-root: .
-          base-url-path: /
-          include-html: true
-          additional-extensions: html
-          sitemap-format: xml
-          exclude-paths: "/404.html"
+          node-version: '18'
 
-      - name: Commit & push du sitemap
+      - name: Installer sitemap-generator-cli
+        run: npm install -g sitemap-generator-cli
+
+      - name: Générer le sitemap absolu
+        run: |
+          sitemap-generator-cli \
+            https://buonomolea.github.io/portfolio-lea-buonomo/ \
+            --output ./sitemap.xml
+
+      - name: Commit & push le sitemap
         uses: stefanzweifel/git-auto-commit-action@v6.0.1
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           commit_message: "🗺️ Mise à jour automatique du sitemap"
           file_pattern: sitemap.xml
+
