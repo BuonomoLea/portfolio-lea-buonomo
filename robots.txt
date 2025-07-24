@@ -5,4 +5,4 @@ Disallow: /docs/
 Allow: /index.html
 
 # Indiquer l’emplacement du sitemap
-Sitemap: https://<votre-utilisateur>.github.io/sitemap.xml
+Sitemap: https://buonomolea.github.io/portfolio-lea-buonomo/sitemap.xml
