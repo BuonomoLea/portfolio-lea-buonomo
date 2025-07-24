@@ -1,7 +1,7 @@
 # .github/workflows/sitemap.yml
 # yaml-language-server: $schema=https://json.schemastore.org/github-workflow.json
 
-name: Génération automatique du sitemap
+name: Génération du sitemap (absolu)
 
 on:
   push:
@@ -16,30 +16,27 @@ jobs:
 
     steps:
       - name: Checkout du code
-        uses: actions/checkout@v4.2.2
+        uses: actions/checkout@v4
         with:
           persist-credentials: true
-          fetch-depth: 0 
+          fetch-depth: 0
 
       - name: Installer Node.js
         uses: actions/setup-node@v3
         with:
           node-version: '18'
 
-      - name: Installer sitemap-generator-cli
-        run: npm install -g sitemap-generator-cli
-
       - name: Générer le sitemap absolu
         run: |
-          sitemap-generator-cli \
+          npm install sitemap-generator-cli --no-save
+          npx sitemap-generator-cli \
             https://buonomolea.github.io/portfolio-lea-buonomo/ \
             --output ./sitemap.xml
 
-      - name: Commit & push le sitemap
+      - name: Commit & push
         uses: stefanzweifel/git-auto-commit-action@v6.0.1
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           commit_message: "Mise à jour automatique du sitemap"
           file_pattern: sitemap.xml
-          pull: true
 
