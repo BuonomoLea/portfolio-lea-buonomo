@@ -17,6 +17,9 @@ jobs:
     steps:
       - name: Checkout du code
         uses: actions/checkout@v4.2.2
+        with:
+          persist-credentials: true
+          fetch-depth: 0 
 
       - name: Installer Node.js
         uses: actions/setup-node@v3
@@ -36,6 +39,7 @@ jobs:
         uses: stefanzweifel/git-auto-commit-action@v6.0.1
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          commit_message: "🗺️ Mise à jour automatique du sitemap"
+          commit_message: "Mise à jour automatique du sitemap"
           file_pattern: sitemap.xml
+          pull: true
 
