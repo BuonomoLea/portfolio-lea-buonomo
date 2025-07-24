@@ -1,8 +1,6 @@
 User-agent: *
 Disallow: /docs/
 
-# Page d’accueil
 Allow: /index.html
 
-# Indiquer l’emplacement du sitemap
 Sitemap: https://buonomolea.github.io/portfolio-lea-buonomo/sitemap.xml
