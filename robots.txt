@@ -1,8 +1,8 @@
 User-agent: *
-Disallow: /assets/
 Disallow: /docs/
-Disallow: /styles.css
-Disallow: /scripts.js
 
 # Page d’accueil
 Allow: /index.html
+
+# Indiquer l’emplacement du sitemap
+Sitemap: https://<votre-utilisateur>.github.io/sitemap.xml
