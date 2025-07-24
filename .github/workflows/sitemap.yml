@@ -1,6 +1,10 @@
 # .github/workflows/sitemap.yml
 # yaml-language-server: $schema=https://json.schemastore.org/github-workflow.json
 
+# Autorise GitHub Actions
+permissions:
+  contents: write
+
 name: Génération automatique du sitemap
 
 on:
@@ -18,11 +22,16 @@ jobs:
       - name: Générer le sitemap
         uses: cicirello/generate-sitemap@v1.10.2
         with:
-          base-url: https://buonomolea.github.io/portfolio-lea-buonomo
-          output: sitemap.xml
+          # corrige les noms d’inputs pour cette version de l’action
+          path-to-root: .
+          base-url-path: /
+          sitemap-format: xml
+          exclude-paths: "/404.html"
 
       - name: Commit & push du sitemap
         uses: stefanzweifel/git-auto-commit-action@v6.0.1
         with:
+          # Le GITHUB_TOKEN qui a maintenant les droits write
+          token: ${{ secrets.GITHUB_TOKEN }}
           commit_message: "🗺️ Mise à jour automatique du sitemap"
           file_pattern: sitemap.xml
