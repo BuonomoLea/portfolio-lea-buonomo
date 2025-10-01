@@ -237,6 +237,7 @@
             text-transform: uppercase;
             transform: var(--compressed);
             letter-spacing: -2px;
+            color: var(--primary);  
         }
         .social-title {
             display: flex;
@@ -244,6 +245,7 @@
             font-size: var(--spacing-m);
             text-transform: uppercase;
             transform: var(--compressed);
+            color: var(--primary);
         }
         .social-icons {
             display: flex;
