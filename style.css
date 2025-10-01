@@ -305,6 +305,7 @@
             text-decoration: none;
             font-size: var(--spacing-m);
             font-weight: bold;
+            cursor: pointer;
             border-radius: 4px;
         }
             .hero-button::after {
