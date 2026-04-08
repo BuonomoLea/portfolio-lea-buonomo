@@ -221,7 +221,7 @@
             <div class="hero-content" role="region" aria-labelledby="hero-title">
                 <!-- Titre et Image positionné au centre de la view -->
                 <div class="hero-image" aria-hidden="true">
-                    <img src="assets/ico/apple-touch-icon.png" alt="Logo Portfolio Léa Buonomo" width="200" height="200" loading="lazy" />
+                    <img src="assets/ico/svg-logo.svg" alt="Logo Portfolio Léa Buonomo" width="200" height="200" loading="lazy" />
                 </div>
                 
                 <h1 id="hero-title" class="title">BIENVENUE SUR <br> MON PORTFOLIO</h1>
@@ -761,7 +761,7 @@
                         <!-- message d’erreur injecté dynamiquement ici -->
                     </div>
                 </div>
-                <!-- <div class="g-recaptcha" data-sitekey="6Lfuy4grAAAAAFGTS7dHNtAS8sksm15Th4weV1M3"></div> -->
+
                 <div id="form-status" aria-live="polite" role="status" class="form-status"></div>
                 <div class="container-btn">
                     <button type="submit" class="hero-button">Envoyer</button>                
@@ -769,6 +769,20 @@
             </form>
         </div>
     </footer>
+
+    <script>
+        // document.addEventListener('contextmenu', function(e) {
+        //     e.preventDefault();
+        //     alert("La copie de contenu est désactivée sur ce site.");
+        // });
+        document.addEventListener('keydown', function(e) {
+            if ((e.ctrlKey || e.metaKey) && 
+                (e.key === 'c' || e.key === 'x' || e.key === 'v' || e.key === 's')) {
+                e.preventDefault(); 
+                alert('Merci de ne pas copier contenu de ce site.');
+            }
+        });
+    </script>
 </body>
 </html>
 

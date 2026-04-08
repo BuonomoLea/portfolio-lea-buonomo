@@ -191,8 +191,8 @@
     text-align: center;
 }
     .hero-image {
-        top: 70%;
-        left: 40%;
+        top: 55%;
+        left: 45%;
         transform: translateX(-50%) translateY(-50%);        
         width: 35%;
         height: 50%;
@@ -201,7 +201,8 @@
         z-index: 9999;
     }
     .hero-image img {
-        opacity: .07;
+        opacity: .05;
+        filter: saturate(0.6);
     }
     #heroModel {
         width: 100%;
